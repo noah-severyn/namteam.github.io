@@ -721,37 +721,51 @@ The base RealHighway network **does NOT support tunnels**. While certain slope s
 
 ### Neighbor Connections
 
-While the single-tile, two-way RealHighway networks (the RHW-2, RHW-3, and DDRHW-4) can form functioning neighbor connections the standard way, attempting to do this with any other RealHighway network will result in only freight trucks being able to use the connection. This is because the game cannot handle one-way neighbor connections, as would be required with the RHW-4, MIS, and the various wider networks. As a result, special Neighbor Connectors (NCs) are required, in order to provide proper functionality for these override networks. These can be found under the RHW Neighbor Connector Pieces button.
+The single-tile two-way RealHighway networks (RHW-2, RHW-3, and DDRHW-4) can form functioning Neighbor Connections (NCs) the standard way, just by dragging the network over the edge of the city.
+Neighbor connections for all other RealHighway networks must use special pieces for them to function correctly, otherwise only freight trucks can use the connection.
+This is a game limitation, and is the same reason the game does not support NCs for one way roads.
+
+These two special neighbor connection pieces, the **RHW FLEX Neighbor Connector** and **RHW Invisible Loop Connector**, can be found under the RHW Neighbor Connector Pieces button.
 
 {{< menu-icon icon="images/icons/rhw-nc-button.jpg" caption="_RHW Neighbor Connector Pieces Button_" >}}
 
-There are two types of pieces involved in RHW Neighbor Connections: Network Pieces and Invisible Loop Connectors.
+Start by building a neighbor connection through the normal draggable means with the RHW network you wish to use.
 
-To build the Neighbor Connection, build a standard Neighbor Connection through the normal draggable means with the network you wish to use.
+{{< carousel >}}
+    images/rhw-nc-1.jpg
+    images/rhw-nc-2.jpg
+{{< /carousel >}}
 
-{{< img-simple src="images/rhwnc1.jpg" >}}
+{{< alert context="info" >}}
+No matter how you drag the RHW to the edge, the default yellow Neighbor Connection arrows will face the same direction for both directions of travel, unlike Avenue or Maxis Highway Neighbor Connections. These arrows are purely cosmetic. There is no way to change this, nor any need to do so.
+{{< /alert >}}
 
-Please note that no matter how you drag the RHW to the edge, the default yellow Neighbor Connection will **always be facing the same way**, unlike Avenue or Maxis Highway Neighbor Connections. (There is no way to change this, nor any need to do so.)
+Place the FLEX Neighbor Connector (FLEX-NC) piece over each network tile that will be part of the Neighbor Connection, over top of the the game's default yellow Neighbor Connection arrows.
+If the two sides of your RHW are separated by empty tiles, place Invisible Loop Connectors in the median area between the two NCs.
+Ensure the arrows are parallel to the edge of the city.
+The connector pieces are invisible when placed, but will show a subtle 'ghost model' when queried.
 
-{{< img-simple src="images/rhwnc2.jpg" >}}
+For "Combined" ("C-type") networks, such as the RHW-6C and 8C, place the FLEX-NC piece over each tile. No Invisible Loop Connectors are required.
 
-Then find the RHW Neighbor Connector button, and place the FLEX Neighbor Connector (FLEX-NC) over each network tile that will be part of the Neighbor Connection, on the the game's default yellow Neighbor Connection arrows. After that, simply drag the network through the FLEX-NC to connect it.
+{{< carousel >}}
+    images/rhw-nc-3.png | Use the FLEX-NC piece
+    images/rhw-nc-4.png | Use the FLEX-NC piece
+    images/rhw-nc-5.png | Use the Invisible Loop Connector
+    images/rhw-nc-6.png | NC pieces shown when queried
+    images/rhw-nc-7.jpg | Use the FLEX-NC piece 3x
+    images/rhw-nc-8.jpg | Paths drape over the edge of the city
+{{< /carousel >}}
 
-{{< img-simple src="images/rhw-flexnc-use.jpg" >}}
+{{< alert context="warning" >}}
+**Do not** place the Invisible Loop Connectors over top of the RHW network.
+This is not what they were intended for and will actually prevent the connection from working.
+Due to how the pieces have to be set up, it is also possible you will see "spider cars" going down the edge of your city tile, as the paths are be draped over the edge of the city tile.
+{{< /alert >}}
 
-If the two sides of your RHW are separated by one or more tiles, place the Invisible Loop Connectors in the median area right next to the edge of the city tile, filling the gap. The Invisible Loop Connectors, which look like a blue arrow with an "N" inside, when placed, will show up invisible, but you can easily locate them by hovering a query tool over top, which will cause an otherwise invisible "ghost model" with the blue "N" arrow to appear:
+To complete the neighbor connection, repeat this process identically in the neighboring city tile.
+Run the traffic simulation for some time in both cities for the game to recognize that there is a valid connection.
 
-{{< img-simple src="images/rhwnc5.jpg" >}}
-
-Do **not** place the Invisible Loop Connectors directly over top of you network, as this is not what they were intended for and they will actually prevent your system from working. Due to how the pieces have to be set up, it is also possible you will see "spider cars" going down the edge of your city tile, and the paths will be draped over the edge of the city tile.
-
-{{< img-simple src="images/rhwnc6.jpg" >}}
-
-For "Combined" ("C-type") networks, such as the RHW-6C and 8C, simply place the FLEX-NC over top of the network at the edge of the city tile, and then drag the RHW-C network through it.
-
-In order for the connection to work properly, this process must be repeated identically in the neighboring city tile, and the traffic simulation must be given some time to run in both involved city tiles in order for the game to recognize that there is a valid connection.
-
-_NOTE: With the addition of the FLEX Neighbor Connectors in NAM 42, all elevated networks are now supported._
+With the addition of the FLEX Neighbor Connectors in NAM 42, all elevated networks are now supported.
 
 ### Specialised Network Crossings and Interchanges
 
