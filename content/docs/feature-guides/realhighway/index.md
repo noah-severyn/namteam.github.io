@@ -12,7 +12,7 @@ url: "docs/feature-guides/realhighway-mod"
 {{< docstatus status="workinprogress" >}}
 
 {{< gallery col-xl="4" col-lg="4" col-md="2">}}
-    images/rhwteaser1.jpg
+    images/rhw-teaser-1.jpg
     images/rhwteaser2.jpg
     images/rhwteaser3.jpg
     images/rhwteaser4.jpg
