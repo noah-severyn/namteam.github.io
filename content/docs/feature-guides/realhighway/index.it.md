@@ -105,47 +105,6 @@ Additionally, RHW Starter Pieces can be crossed by other RHW networks, allowing 
 
 The RealHighway family of networks is considered to be Highway-type by the game, and as such, this limits its ability to provide direct access to zones and buildings, as one would expect from a highway. This limitation is especially true of Residential (R) zones, which cannot be built at all along RHW networks, and attempting to have any zone type use RealHighway network frontage for access is not recommended. It is instead recommended that one downgrade to a non-highway network, such as the Road, One-Way Road, or one of the [Network Widening Mod](/docs/features/network-widening-mod/) override networks if zone access is required.
 
-## Capacities and Speeds
-
-The capacity of each network depends on the [Traffic Plugin](/docs/feature-guides/traffic-sim/) one has installed. Capacity is generally calculated on a per tile basis by the game, as the game cannot read the number of lanes.
-
-All RHW networks are also highway-type networks, meaning that they do not allow full access to RCI Zones. The capacities for the five standard capacity levels of the NAM Traffic Plugin are listed below. Please note that these capacities listed are for the _full width_ of the network, rather than the per-tile capacity.
-
-Note that networks with crossover paths (i.e. the **RHW-6C**, **RHW-8S**, **RHW-8C**, **RHW-10S**, and **RHW-12S**), and those that use a special workaround (the **RHW-3**, **DDRHW-4**, and **RHW-6S**) have a 25% boost on capacity over the normal per-tile figure for the base RHW network. This boost can only be applied once, which is why the **DDRHW-4**, despite having one more lane than the **RHW-3**, has the same capacity. A similar situation exists with the **RHW-6C** and **RHW-8C**, and the **RHW-8S** and **RHW-10S**.
-
-Note that these figures also apply to all elevated versions of each network width - this means that the **L0** **RHW-4** will have the same capacity as its **L1**, **L2**, **L3**, and **L4** counterparts.
-
-{{< table class="table table-striped table-bordered w-auto" >}}
-| RHW Network Type | Classic | Low | Medium | High | Ultra |
-| --- | :---: | :---: | :---: | :---: | :---: |
-| RHW-2 (single-tile capacity) | 3000 | 6000 | 10000 | 15000 | 30000 |
-| RHW-3 (single-tile capacity) | 3750 | 7500 | 12500 | 18750 | 37500 |
-| MIS Ramps (single-tile capacity) | 3000 | 6000 | 10000 | 15000 | 30000 |
-| RHW-4 (dual-tile capacity) | 6000 | 12000 | 20000 | 30000 | 60000 |
-| DDRHW-4 (single-tile capacity) | 3750 | 7500 | 12500 | 18750 | 37500 |
-| RHW-6S (dual-tile capacity) | 7500 | 15000 | 25000 | 37500 | 75000 |
-| RHW-6C (triple-tile capacity) | 11250 | 22500 | 37500 | 56250 | 112500 |
-| RHW-8S (quadruple-tile capacity) | 15000 | 30000 | 50000 | 75000 | 150000 |
-| RHW-8C (triple-tile capacity) | 11250 | 22500 | 37500 | 56250 | 112500 |
-| RHW-10S (quadruple-tile capacity) | 15000 | 30000 | 50000 | 75000 | 150000 |
-| RHW-12S (quadruple-tile capacity) | 15000 | 30000 | 50000 | 75000 | 150000 |
-{{< /table >}}
-
-The catalog speeds for the base RealHighway network are listed below. Note, however, that these catalog speeds are for 100% of catalog capacity, and that speeds on empty networks will exceed these figures by 30%, declining as the networks increase in volume per the Congestion vs. Speed Curve.
-
-{{< table class="table table-striped table-responsive table-bordered w-auto" >}}
-| Vehicle Type | Speed |
-| --- | :---: |
-| Car | 150 |
-| Bus* | 150 |
-| Freight Truck | 130 |
-| Pedestrian** | 10 |
-{{< /table >}}
-
-\* If one customizes the NAM Traffic Simulator using the Traffic Simulator Configuration Tool (TSCT), and selects the "_Highway Bus Lanes_" option, Bus speed on RealHighways will be boosted to 160.
-
-\*\* Pedestrians are only allowed on the **L0** RHW-2 newtork.
-
 ## Constructing The RealHighway
 
 ### Constructing Diagonals and Base Curves
