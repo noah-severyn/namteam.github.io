@@ -140,6 +140,25 @@ Not currently supported.
 
 ### Wide-Radius / Multi-Radius Curves
 
+This compatibility also applies to all applicable levels of each RHW network, not just L0.
+
+{{< table class="table-bordered nam-compat-status w-auto" >}}
+| Width   | 90° R0 | 90° R1 | 90° R2              | 90° R3 | 90° R4 | 90° R5 | 45° R0 | 45° R1 | 45° R2 | 45° R3              | 45° R4              | 45° R5              | Lane Shift          | Basketweave |
+| ------- | ------ | ------ | ------------------- | ------ | ------ | ------ | ------ | ------ | ------ | ------------------- | ------------------- | ------------------- | ------------------- | ----------- |
+| MIS     | No     | Yes    | Partial<sup>1</sup> | No     | No     | No     | Yes    | Yes    | Yes    | Partial<sup>1</sup> | Partial<sup>1</sup> | Partial<sup>1</sup> | Partial<sup>1</sup> | No          |
+| RHW-2   | Yes    | No     | Partial<sup>1</sup> | No     | No     | No     | Yes    | Yes    | Yes    | Partial<sup>1</sup> | Partial<sup>1</sup> | Partial<sup>1</sup> | Partial<sup>1</sup> | No          |
+| RHW-3   | No     | No     | Partial<sup>1</sup> | No     | No     | No     | Yes    | Yes    | Yes    | Partial<sup>1</sup> | Partial<sup>1</sup> | Partial<sup>1</sup> | Partial<sup>1</sup> | No          |
+| RHW-4   | No     | No     | Partial<sup>1</sup> | No     | No     | No     | Yes    | Yes    | Yes    | Partial<sup>1</sup> | Partial<sup>1</sup> | Partial<sup>1</sup> | Partial<sup>1</sup> | Yes         |
+| RHW-6S  | No     | No     | No                  | No     | No     | No     | Yes    | Yes    | Yes    | Partial<sup>1</sup> | Partial<sup>1</sup> | Partial<sup>1</sup> | Partial<sup>1</sup> | No          |
+| RHW-6C  | No     | No     | No                  | No     | No     | No     | No     | No     | No     | No                  | No                  | No                  | Partial<sup>2</sup> | No          |
+| RHW-8S  | No     | No     | No                  | No     | No     | No     | No     | No     | No     | Partial<sup>2</sup> | No                  | No                  | No                  | No          |
+| RHW-8C  | No     | No     | No                  | No     | No     | No     | No     | No     | No     | No                  | No                  | No                  | Partial<sup>2</sup> | No          |
+| RHW-10S | No     | No     | No                  | No     | No     | No     | No     | No     | No     | Partial<sup>2</sup> | No                  | No                  | No                  | No          |
+{{< /table >}}
+
+<span class="fs-6">**<sup>1</sup>** With FLEX or puzzle pieces only, draggable patterns are not supported.</span><br>
+<span class="fs-6">**<sup>2</sup>** With puzzle pieces pieces only, FLEX and draggable patterns are not supported.</span><br>
+
 ### Fractional Angle Support
 
 As Fractional Angle support for the RHW is entirely puzzle piece-based at present, see the listings in the Menu Items section, under the FARHW, FARHW Ramp Interfaces, and FARHW Intersections and Transitions buttons.
