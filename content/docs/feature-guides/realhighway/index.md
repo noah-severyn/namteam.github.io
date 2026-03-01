@@ -159,7 +159,7 @@ The Multi-Radius Curves are a series of wider-radius curves that are constructed
 There are five radii total included in the MRC system, R1, R2, R3, R4, and R5, as well as an S-Curve and a Basketweave setup.
 The higher the number, the wider the radius.
 As with all RHW FLEX items, the default network when plopping is RHW-2, but these will support overrides up to RHW-6S width.
-Refer to the [Compatibility Guide](/docs/tech-specs/realhighway-mod/) for the full detail on what is supported.
+Refer to the [RHW Compatibility Guide](/docs/tech-specs/realhighway-mod/) for the full detail on what is supported.
 
 {{< img-simple src="images/curves/rhw-mrc-radii.jpg" >}}
 
@@ -249,7 +249,7 @@ Build the full curve one half at a time.
 
 It is possible to also build larger composite 90° turns with the single-tile networks, using the RHW Filler Pieces, but this functionality does not exist for the RHW-8S, 10S, 6C, or 8C.
 
-### Connecting RealHighways via Intersections, Crossings and Interchanges
+### Intersections and Crossings
 
 The RealHighway system has two ways of connecting and crossing other networks: **At-Grade** and **Grade-Separated**. The smaller RealHighway networks, including the RHW-2 (L0-L2), RHW-3 (L0 only), MIS (L0-L2), and RHW-4 (L0-L2), have the ability to intersect and cross other networks at the same height level. To build these crossings, simply drag the desired RealHighway network through or up to the crossing network to build the type of crossing you want, just as one would with any other draggable network in the game.
 
@@ -259,30 +259,36 @@ For grade-separated crossings, where networks at different height levels--for in
 
 {{< img-simple src="images/rhw-elcrossing.jpg" >}}
 
-For additional information about what network crossings are supported with the other components of the Network Addon Mod, refer to the [Compatibility With Other Networks](/docs/feature-guides/realhighway-mod/#network-and-flex-piece-capabilities) section of this document.
+For additional information about what network crossings are supported with the other components of the Network Addon Mod, refer to the [RHW Compatibility Guide](/docs/tech-specs/realhighway-mod/).
 
-#### QuickChange Xpress: Full Interchanges in a Click {#QCX}
+### QuickChange Interchanges {#QCX}
 
-With the release of NAM 45 in mid-2022, the RealHighway has support for full ploppable interchanges, known as QuickChange Xpress (QCX). At present, only Diamond Interchanges involving the Road, Avenue, and 6-lane Avenue (AVE-6, from the Network Widening Mod) networks (with appropriate turn lanes applied on the surface networks and the on/offramps) exist. Four different RHW width configurations are supported (RHW-6S/RHW-4 Adjacent, RHW-6S/RHW-4 With Median, RHW-8C/6C, and RHW-10S/8S), and the option to have the RHW go over or under the surface street (in an L0/L1 configuration).
+The release of NAM 45, for the first time, brought support of for full ploppable interchanges, known as QuickChange Xpress (QCX).
+Like Maxis interchanges, these are able to be built with a single click.
+A somewhat limited variety of these interchanges exist, mainly focusing on highway entrance and exit ramps for road-based networks.
+At present, only Diamond Interchanges involving the Road, Avenue, and 6-lane Avenue (AVE-6, from the Network Widening Mod) networks exist.
+Each of these interchanges has appropriate turn lanes already applied on the surface networks and the on/offramps.
+Four different RHW width configurations are supported (RHW-6S/RHW-4 Adjacent, RHW-6S/RHW-4 With Median, RHW-8C/6C, and RHW-10S/8S), and the option to have the RHW go over or under the surface street (in an L0/L1 configuration).
 
-The QCX setups are located near the end of the TAB Loop under the RHW QuickChange button on the Highways Menu. TABing through will change the surface network width (Road or Avenue) and whether it or the RHW is elevated or the surface network is. Home/End rotation on each TAB entry will allow one to cycle through the different RHW widths/configurations supported.
+The QCX setups are located near the end of the TAB Loop under the RHW QuickChange button on the Highways Menu.
+Tab through this loop to change the surface network width (Road or Avenue) and whether the RHW is elevated or the surface network is elevated.
+Rotate each piece to cycle through the different RHW widths/configurations.
 
-To use a QCX, simply plop the interchange in its desired location/rotation, and connect it up with the surrounding networks. It's really that easy!
+To use a QCX, plop the interchange in its desired location/rotation, and connect it up with the surrounding networks. It's really that easy!
 
-{{< gallery col-xl="2" col-lg="2" clickable="true" >}}
-    images/quickchange/rhw-qcx-1.jpg
-    images/quickchange/rhw-qcx-2.jpg
-    images/quickchange/rhw-qcx-3.jpg
+{{< carousel >}}
+    images/quickchange/rhw-qcx-1.jpg | Plop the QCX
+    images/quickchange/rhw-qcx-2.jpg | Drag out the Road or Avenue networks
+    images/quickchange/rhw-qcx-3.jpg | Drag out the RHW networks
     images/quickchange/rhw-qcx-4.jpg
-    images/quickchange/rhw-qcx-5.jpg
-{{< /gallery >}}
+{{< /carousel >}}
 
 It is also possible to plop a QCX directly over an existing crossing.
 
-{{< gallery col-xl="2" col-lg="2" clickable="true" >}}
+{{< carousel >}}
     images/quickchange/rhw-qcx-6.jpg
     images/quickchange/rhw-qcx-7.jpg
-{{< /gallery >}}
+{{< /carousel >}}
 
 #### On/Offramp (Ramp Interface) Basics
 
