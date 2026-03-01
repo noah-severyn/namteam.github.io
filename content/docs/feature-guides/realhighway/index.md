@@ -133,17 +133,121 @@ Instead, it's recommended to downgrade to a non-highway network, such as the Roa
 
 ## Constructing The RealHighway
 
-### Constructing Diagonals and Base Curves
+### Diagonals and Base Curves
 
-With the networks that are single-tile (RHW-2, RHW-3), or have self-contained single-tile halves (MIS, RHW-4, RHW-6S), one can simply drag the network out as would be normally expected in order to produce the curves to go diagonal with the network. Aside from the **L0** RHW-2, however, the shared-tile "double diagonal" setup cannot be built, and pairs of MIS, RHW-4, and/or RHW-6S carriageways must be separated, out into a split-tile setup.
+Single tile RHW networks (MIS, RHW-2, RHW-3, RHW-4, RHW-6S) can be simply be dragged diagonally as normal.
+Multi tile RHW networks (RHW-8S, RHW-10S, RHW-12S, RHW-6C, and RHW-8C) must have each tile drawn diagonally over adjacent tiles. This is referred to as a "split-tile diagonal" - no diagonal pieces overlap on the same tiles.
+This is in contrast to many Maxis networks that allow "shared-tile diagonals" (or "double diagonal") setups.
+With the exception of L0 RHW-2, double diagonal setups are not supported.
 
-For the wider RHW networks (the RHW-8S, RHW-10S, RHW-12S, RHW-6C, and RHW-8C), the split-tile diagonal setup must be used.
+{{< img-simple src="images/curves/rhw-multitile-diagonals.jpg" >}}
 
-{{< img-simple src="images/rhw-multitile-diagonals.jpg" >}}
+The default draggable curves for the RealHighway networks are not exactly the smoothest or most realistic.
+The FLEX-based and draggable [Multi-Radius Curves (MRCs)](/docs/feature-guides/realhighway-mod/#mrcs) and the Puzzle Piece-based [Wide-Radius Curves (WRCs)]((/docs/feature-guides/realhighway-mod/#wrcs)) provide smoother curves with wider radii than the defaults.
+[Fractional Angle RealHighways (FARHW)](/docs/feature-guides/realhighway-mod/#fractional-angle-realhighways-farhw) are also available for even gentler curves. 
 
-The default sharp 90-degree bends are only available with the RHW-2 and MIS Ramp networks (at all height levels), for the sake of realism. The MIS Ramp's version also overrides one "buffer tile" on either side of the bend itself, to produce a smoother result (one should take care not to impose upon these buffer tiles when building, as attempting to cram an intersection where they should go will simply destabilize the MIS Ramp override).
+The default sharp 90-degree bends are only available with the RHW-2 and MIS Ramp networks (at all height levels), for the sake of realism.
+The MIS Ramp's version also overrides one "buffer tile" on either side of the bend itself, to produce a smoother curve automatically.
+90-degree curves for all other networks may be created by combining two 45-degree curves together.
 
-If one desires a smoother transition between orthogonal and diagonal, [Wide-Radius Curves and Multi-Radius Curves](/docs/feature-guides/realhighway-mod/#wide-radius-curves-wrcs-and-multi-radius-curves-mrcs) provide a solution. [Fractional Angle RealHighways (FARHW)](/docs/feature-guides/realhighway-mod/#fractional-angle-realhighways-farhw) are also available.
+### Multi-Radius Curves (MRCs) {#mrcs}
+
+Both the FLEX MRCs and puzzle piece WRCs can be found under the RealHighway Curves button on the Highways menu.
+{{< menu-icon icon="images/icons/rhw-curves-button.jpg" caption="_RHW Curves Button_">}}
+
+The Multi-Radius Curves are a series of wider-radius curves that are constructed through either draggable means or with FLEX pieces.
+There are five radii total included in the MRC system, R1, R2, R3, R4, and R5, as well as an S-Curve and a Basketweave setup.
+The higher the number, the wider the radius.
+As with all RHW FLEX items, the default network when plopping is RHW-2, but these will support overrides up to RHW-6S width.
+Refer to the [Compatibility Guide](/docs/tech-specs/realhighway-mod/) for the full detail on what is supported.
+
+{{< img-simple src="images/curves/rhw-mrc-radii.jpg" >}}
+
+The Multi-Radius Curves do not support the creation of intersections or crossings at any point in the curve, and attempting to build one will destabilize the curve.
+The [FLEXFly system](/docs/feature-guides/realhighway-mod/#using-the-flexfly-flexible-flyover-system) does allow for an equivalent functionality, however.
+
+#### R1 Curves
+
+R1 45° curves, also known as "mini-curves", are constructed by draggable means, and can be easily constructed with a simple additional motion when building the default network curves.
+Build the standard diagonal curve first, then drag in a straight, orthogonal motion back over the curve.
+Afterward, a smoother curve will appear.
+
+{{< carousel >}}
+    images/curves/rhw-mrc-r1-1.jpg
+    images/curves/rhw-mrc-r1-2.jpg
+{{< /carousel >}}
+
+Alternatively, instead of dragging the default curve, move your cursor one tile further away from the curve to automatically trigger the curve.
+
+{{< carousel >}}
+    images/curves/rhw-mrc-r1-3.jpg | Standard diagonal curve
+    images/curves/rhw-mrc-r1-4.jpg | Move one tile further instead
+    images/curves/rhw-mrc-r1-5.jpg
+{{< /carousel >}}
+
+When dragging R1 curves with RHW-6S, due to the overhang there may be a "bite" missing from the inside of some curve setups.
+Use the RHW tool and click once in the area of the missing "bite" to fill it in.
+
+{{< carousel >}}
+    images/curves/rhw-mrc-r1-6.jpg | Standard diagonal curve
+    images/curves/rhw-mrc-r1-7.jpg | Move one tile further instead
+    images/curves/rhw-mrc-r1-8.jpg | A little "bite" is missing from the curve
+    images/curves/rhw-mrc-r1-9.jpg | Click with RHW tool
+    images/curves/rhw-mrc-r1-10.jpg
+{{< /carousel >}}
+
+#### R2 Curves
+
+R2 45° curves may be constructed either via draggable means or FLEX pieces.
+For the draggable R2 setup, drag the default curve as usual, and then build a 90° bend on the inside of the curve by dragging one tile away from the curve on the inside, then one tile back towards the curve.
+
+{{< carousel >}}
+    images/curves/rhw-mrc-r2-1.jpg | Regular diagonal
+    images/curves/rhw-mrc-r2-2.jpg | Drag one tile right
+    images/curves/rhw-mrc-r2-3.jpg | Drag one tile up
+    images/curves/rhw-mrc-r2-4.jpg
+{{< /carousel >}}
+
+To build FLEX curves, select the desired radius and place it in the city.
+Remember, FLEX pieces all default to the base L0 RHW-2 network, but dragging an override network into a FLEX MRC piece will cause it to convert to the dragged network.
+The overridden network can be dragged out of either side of the FLEX curve.
+
+{{< carousel >}}
+    images/curves/rhw-mrc-flex-1.jpg
+    images/curves/rhw-mrc-flex-2.jpg | Place a starter piece
+    images/curves/rhw-mrc-flex-3.jpg | Drag into the curve to override
+    images/curves/rhw-mrc-flex-4.jpg
+    images/curves/rhw-mrc-flex-5.jpg | Network is draggable from both ends
+{{< /carousel >}}
+
+
+Note also that the orthogonal ends of R2 curves can overlap by one tile, allowing for one to create a smooth composite curve, which can be very useful in building aesthetically-pleasing interchange ramps.
+Other radius curves do not support this feature.
+
+{{< img-simple src="images/curves/rhw-mrc-r2-overlap.jpg" >}}
+
+#### R3, R5, R5 Curves
+
+The R3, R4, and R5 radii only exist as FLEX pieces, and are constructed the same way as the R2 FLEX piece.
+
+### Wide-Radius Curves (WRCs) {#wrcs}
+
+In addition to the MRCs, a series of puzzle piece-based Wide-Radius Curves (WRCs) also exist, which at least partially cover the gaps for ground-level RealHighway networks where FLEX pieces do not exist.
+S-Curves exist for all networks, 45° curves exist for all but the RHW-6C and 8C, and 90° curves (in two radii, small and large) exist for the RHW-2 and MIS Ramps.
+
+The Wide-Radius Curve puzzle pieces do **NOT** have starters on their ends, unlike many other older puzzle-based RealHighway items, and being puzzle-based, do not support overrides.
+As such, they generally must be built on top of an existing stretch of a RealHighway network.
+The network must already exist up to the point at which the curve piece begins.
+With S-Curves/Lane Shifts, the presence of base network stubs may allow one to simply place starters oneself on either end.
+
+{{< img-simple src="images/curves/rhw-wrc-use-1.jpg" >}}
+
+The S-Curves for the RHW-6C and RHW-8C are built in a modular fashion as well, to allow support for the asymmetrical "RHW-7C" setup.
+Build the full curve one half at a time.
+
+{{< img-simple src="images/curves/rhw6c-s-curve.jpg" >}}
+
+It is possible to also build larger composite 90° turns with the single-tile networks, using the RHW Filler Pieces, but this functionality does not exist for the RHW-8S, 10S, 6C, or 8C.
 
 ### Connecting RealHighways via Intersections, Crossings and Interchanges
 
@@ -432,52 +536,6 @@ Transitions to non-RealHighway networks are accomplished simply by dragging the 
 A full list of supported transition setups can be found [here](/docs/feature-guides/realhighway-mod/#network-and-flex-piece-capabilities), and a listing of items under the transition-related menu buttons can be found [here](/docs/feature-guides/realhighway-mod/#rhw-transition-menu-items).
 
 ### Advanced Curves and FLEXFly
-
-#### Wide-Radius Curves (WRCs) and Multi-Radius Curves (MRCs)
-
-The default draggable curves for the RealHighway networks are not exactly the smoothest or most realistic. The FLEX-based and draggable **Multi-Radius Curves (MRCs)** and the Puzzle Piece-based **Wide-Radius Curves (WRCs)** allow one to change that, by providing smoother curves with wider radii than the defaults. Both the FLEX and puzzle pieces can be found under the RealHighway Curves button on the Highways menu.
-
-{{< menu-icon icon="images/icons/rhw-curves-button.jpg" caption="_RHW Curves Button_">}}
-
-##### Multi-Radius Curves (MRCs) [FLEX/Draggable]
-
-The Multi-Radius Curves are a series of wider-radius curves that are constructed through either draggable means or with FLEX pieces. There are five radii total included in the MRC system--R1, R2, R3, R4, and R5, as well as an S-Curve and a Basketweave setup. The higher the number, the wider the radius (i.e. R2 has a wider radius than R1). As with many items, they default to the RHW-2, but they can support up to the RHW-6S width--more details as to precisely what is supported can be found [here](/docs/feature-guides/realhighway-mod/#network-and-flex-piece-capabilities).
-
-{{< img-simple src="images/rhw-mrc-radii.jpg" >}}
-
-R1 curves, also known as "Mini-Curves", are constructed by draggable means, and can be easily constructed with a simple additional motion when building the default network curves. Simply drag in a straight, orthogonal motion through the entire default curve. Afterward, a smoother curve will appear. Alternatively, one can simply try to drag the curve to the diagonal one tile before an end stub, which will also trigger the R1 curve.
-
-{{< img-simple src="images/rhw-mrc-r1.jpg" >}}
-
-Note that with the RHW-6S, due to the overhang, a "bite" may appear to be missing from some curve setups. Simply click in the area of the missing "bite" with the RealHighway network tool to fill it.
-
-{{< img-simple src="images/rhw-mrc-r1-rhw6s.jpg" >}}
-
-R2 45° curves may be constructed either via draggable means or FLEX pieces. For the draggable R2 setup, drag the default curve as usual, and then build a 90° bend on the inside of the curve, at which point it should convert. To build the FLEX piece, simply select it from the menu and place it. The FLEX pieces--which include a 90° variant in addition to the 45° version--all default to the base L0 RHW-2 network, but dragging an override network into a FLEX MRC piece, or plopping one over top of an existing stretch of override network will cause it to convert to match, provided the network is supported for that particular setup.
-
-{{< img-simple src="images/rhw-mrc-use-2.jpg" >}}
-
-Note also that the orthogonal ends of R2 curves can, in fact, overlap, allowing for one to create a smooth composite curve, which can be very useful in building aesthetically-pleasing interchange ramps.
-
-{{< img-simple src="images/rhw-mrc-r2-overlap.jpg" >}}
-
-The R3, R4, and R5 radii only exist as FLEX pieces, and can be constructed the same way as the R2 FLEX piece. They do not, however, support the overlap/composite curve functionality of the R2 curves.
-
-The Multi-Radius Curves do not support the creation of intersections or crossings at any point in the curve, and attempting to build one will destabilize the curve. The [FLEXFly system](/docs/feature-guides/realhighway-mod/#using-the-flexfly-flexible-flyover-system) does allow for an equivalent functionality, however.
-
-##### Wide-Radius Curves (WRCs) [Puzzle]
-
-In addition to the MRCs, a series of puzzle piece-based Wide-Radius Curves (WRCs) also exists, which at least partially cover all ground-level RealHighway networks. S-Curves exist for all networks, 45° curves exist for all but the RHW-6C and 8C, and 90° curves (in two radii--small and large) exist for the RHW-2 and MIS Ramps.
-
-The Wide-Radius Curve puzzle pieces do **NOT** have starters on their ends, unlike many other older puzzle-based RealHighway items, and being puzzle-based, do not support overrides. As such, they generally must be built on top of an existing stretch of a RealHighway network. The network must already exist up to the point at which the curve piece begins. With S-Curves/Lane Shifts, the presence of base network stubs may allow one to simply place starters oneself on either end.
-
-{{< img-simple src="images/rhw-wrc-use-1.jpg" >}}
-
-The S-Curves for the RHW-6C and RHW-8C are built in a modular fashion as well, to allow support for the asymmetrical "RHW-7C" setup. Simply build the full curve one half at a time.
-
-{{< img-simple src="images/rhw6c-s-curve.jpg" >}}
-
-It is possible to also build larger composite 90° turns with the single-tile networks, using the RHW Filler Pieces, but this functionality does not exist for the RHW-8S, 10S, 6C, or 8C.
 
 #### Using the FLEXFly (Flexible Flyover) System
 
@@ -898,10 +956,6 @@ Additionally, combination FLEX Height/Turn Lane transitions exist, allowing more
 {{< img-simple src="images/ftl/rhw-ftl-mis-6.jpg" >}}
 
 Currently, the only crossing networks supported by the MIS-2 FTLs are Roads (with and without SITAP, + and T), One-Way Roads (with SITAP, + and T), Avenues (with and without SITAP, + and T), Type 110 Road/NWM FTLs (with and without SITAP, +-only), Type 120 Avenue/NWM FTLs (with and without SITAP, +-only), Type 130 NWM FTLs (with and without SITAP, +-only), L1 Road (with and without SITAP, + and T), L1 Avenue (without SITAP, +-only), and two intersection types currently only used by the QuickChange Xpress interchanges: Dual Type 110 Road/NWM FTLs, and Dual Type 120 Avenue/NWM FTLs.
-
-## Network and FLEX Piece Capabilities
-
-> Refer to [the RealHighway mod technical document](/docs/tech-specs/realhighway-mod) to see what the RealHighway mod is capable of.
 
 ## List of Menu Items
 
