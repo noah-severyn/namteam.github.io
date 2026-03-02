@@ -290,41 +290,32 @@ It is also possible to plop a QCX directly over an existing crossing.
     images/quickchange/rhw-qcx-7.jpg
 {{< /carousel >}}
 
-#### On/Offramp (Ramp Interface) Basics
+### Ramp Interface Basics
 
-At the core of the RealHighway's Modular Interchange System are the **Ramp Interfaces**, which allow exit and entrance ramps to branch off from or merge into the through lanes, or "mainline", of a stretch of highway.
+At the core of the RealHighway's Modular Interchange System are the **Ramp Interfaces**, which allow exit and entrance ramps to branch from or merge into the through lanes, or "mainline", of a stretch of highway.
 
-{{< img-simple src="images/rhw-rampinterface-anatomy.jpg" >}}
+{{< img-simple src="images/ramps/ramp-interface-anatomy.jpg" >}}
 
-There are three possible ways to construct Ramp Interfaces:
+Ramp Interfaces come in a wide variety of shapes and sizes, so to properly identify each ramp, there are two, sometimes three or even four parts to the name.
+These indicate the mainline width, the branch angle and width, as well as whether any of the branch lanes were "exit only" or "acceleration" lanes - lanes added to or subtracted from the mainline.
+Some more specialized ramp interfaces may append a fourth part, containing other information about the nature and location of the branch in relation to the mainline.
 
-* {{< menu-icon icon="images/icons/rhw-flexramps-button" caption="FLEXRamps, which are ploppable, generally slope-tolerant, and conform to match the surrounding network via overrides. These can be found under the \"FLEXRamps\" button." >}}
-* {{< menu-icon caption="Draggable Ramp Interfaces (DRI), which are Pattern-Based Draggable items, built by dragging the RealHighway network tool according to a specific pattern. Like the FLEXRamps, these will conform to match the surrounding network via overrides." >}}
-* {{< menu-icon icon="images/icons/rhw-old-ramps-button" caption="Puzzle Piece Ramp Interfaces, which are conventional static puzzle pieces, many of which have starters attached to their ends. As these are static ploppables, they will not conform to the surrounding network, and one must select the specific puzzle piece for the desired network. This option is largely considered to be deprecated/outdated, with the exception of the few more specialized setups that have yet to receive FLEXRamp or DRI treatments. These can be found under the \"Ramps\" button." >}}
+The mainline portion will always indicate the width of the "top" portion of the ramp interface, where the mainline is guaranteed to be at its widest.
+In the case of FLEXRamps, since they are often shared by multiple networks which override a base version, the mainline network is usually excluded from the in-game description.
 
-Note that there are some types of ramps that may only be possible through a certain construction method. FLEXRamps and DRIs are the preferred method for most ramp interfaces, and are the only option for most ramps involving elevated RealHighway networks. The puzzle piece method does presently contain a few specialized types that have not been made into FLEXRamp or DRI setups, however. A full listing of capabilities can be found [here](/docs/feature-guides/realhighway-mod/#network-and-flex-piece-capabilities), and there is also a listing of all [ploppable items (including FLEX and Puzzle Pieces)](/docs/feature-guides/realhighway-mod/#list-of-menu-items). More details on constructing each type can be found below.
-
-In order to use a ramp interface to connect a RealHighway to one's surface network, first, build the desired ramp interface. Then, from the end of the branch, simply drag the RealHighway network tool out from it, just like using a starter piece. The network will convert to match the ramp. From there, simply continue dragging in the desired pattern, adding curves and transitions as necessary, and intersect the surface street with an At-Grade Crossing. (Note that the Fractional Angle ramps, Types C and F, do not support dragging, and the appropriate Fractional Angle RealHighway (FARHW) puzzle pieces must be used instead.)
-
-{{< img-simple src="images/rhw-ramp-to-road.jpg" >}}
-
-In order to connect to another RealHighway, follow the same process, but instead of forming an At-Grade Crossing, simply connect the ramp into another Ramp Interface on the other RealHighway.
-
-{{< img-simple src="images/rhw-ramp-to-ramp.jpg" >}}
-
-There are a number of different types of Ramp Interfaces included in the plugin, but at their core, they serve one purpose--to connect RealHighway-based freeways/motorways to the surface streets, or other RealHighway-based freeways/motorways. There are two, sometimes three or even four parts to the name of each ramp interface type. These indicate the mainline width, the branch angle and width, as well as whether any of the branch lanes were "exit only" or "acceleration" lanes, added or subtracted from the mainline. Some more specialized ramp interfaces may append that fourth part, containing other information about the nature and location of the branch in relation to the mainline. The mainline portion will always indicate the width of the "top" portion of the ramp interface, where the mainline is guaranteed to be at its widest. In the case of FLEXRamps, since they are often shared by multiple networks, which override a base version, the mainline network is usually excluded from the in-game description. For the "type" designation, the number indicates the number of lanes included in the branch, while the letter indicates the branch angle and indicates whether the branch has any lanes that peel off (on exit) or join (on entrance) the mainline. The letter/number types translate as follows:
+For the "type" designation, the number indicates the number of lanes included in the branch, while the letter indicates the branch angle and indicates whether the branch has any lanes that peel off (on exit) or join (on entrance) the mainline.
+The letter/number types translate as follows:
 
 <!-- Note, this is in HTML due to an issue with how specific tables are rendered -->
-
 <div class="table-responsive">
-    <table class="bg-white w-auto table-bordered">
+    <table class="w-auto table-bordered">
         <tr>
-            <td class="bg-white"><img src="images/ramps/TypeA1.png" /></td>
-            <td class="bg-white"><img src="images/ramps/TypeB1.png" /></td>
-            <td class="bg-white"><img src="images/ramps/TypeC1.png" /></td>
-            <td class="bg-white"><img src="images/ramps/TypeD1.png" /></td>
-            <td class="bg-white"><img src="images/ramps/TypeE1.png" /></td>
-            <td class="bg-white"><img src="images/ramps/TypeF1.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeA1.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeB1.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeC1.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeD1.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeE1.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeF1.png" /></td>
         </tr>
         <tr>
             <td>Type A1</td>
@@ -335,12 +326,20 @@ There are a number of different types of Ramp Interfaces included in the plugin,
             <td>Type F1</td>
         </tr>
         <tr>
-            <td class="bg-white"><img src="images/ramps/TypeA2.png" /></td>
-            <td class="bg-white"><img src="images/ramps/TypeB2.png" /></td>
-            <td class="bg-white"><img src="images/ramps/TypeC2.png" /></td>
-            <td class="bg-white"><img src="images/ramps/TypeD2.png" /></td>
-            <td class="bg-white"><img src="images/ramps/TypeE2.png" /></td>
-            <td class="bg-white"><img src="images/ramps/TypeF2.png" /></td>
+            <td class="fs-6">A single-lane (MIS) branch off the mainline, with an orthogonal branch. No lanes peel off the mainline.</td>
+            <td class="fs-6">A single-lane (MIS) branch off the mainline, with a diagonal branch. No lanes peel off the mainline.</td>
+            <td class="fs-6">A single-lane (MIS) branch off the mainline, with a fractional angle (18.4°) branch. No lanes peel off the mainline.</td>
+            <td class="fs-6">A single-lane (MIS) branch off the mainline, with an orthogonal branch. The branch is formed from one lane of the mainline, and the mainline has one fewer lane at the bottom.</td>
+            <td class="fs-6">A single-lane (MIS) branch off the mainline, with a diagonal branch. The branch is formed from one lane of the mainline, and the mainline has one fewer lane at the bottom.</td>
+            <td class="fs-6">A single-lane (MIS) branch off the mainline, splitting at a fractional angle (18.4°) from the mainline. The branch is formed from one lane of the mainline, and the mainline has one fewer lane at the bottom.</td>
+        </tr>
+        <tr>
+            <td><img class="img-invert-dark" src="images/ramps/TypeA2.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeB2.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeC2.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeD2.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeE2.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeF2.png" /></td>
         </tr>
         <tr>
             <td>Type A2</td>
@@ -351,12 +350,20 @@ There are a number of different types of Ramp Interfaces included in the plugin,
             <td>Type F2</td>
         </tr>
         <tr>
-            <td class="bg-white"><img src="images/ramps/TypeA3.png" /></td>
-            <td class="bg-white"><img src="images/ramps/TypeB3.png" /></td>
-            <td class="bg-white"><img src="images/ramps/TypeC3.png" /></td>
-            <td class="bg-white"><img src="images/ramps/TypeD3.png" /></td>
-            <td class="bg-white"><img src="images/ramps/TypeE3.png" /></td>
-            <td class="bg-white"><img src="images/ramps/TypeF3.png" /></td>
+            <td class="fs-6">A dual-lane (RHW-4) branch off the mainline, with an orthogonal branch. One of the two lanes on the branch is from the mainline, and the mainline has one fewer lane at the bottom.</td>
+            <td class="fs-6">A dual-lane (RHW-4) branch off the mainline, with a diagonal branch. One of the two lanes on the branch is from the mainline, and the mainline has one fewer lane at the bottom.</td>
+            <td class="fs-6">A dual-lane (RHW-4) branch off the mainline, with a fractional angle (18.4°) branch. One of the two lanes on the branch is from the mainline, and the mainline has one fewer lane at the bottom.</td>
+            <td class="fs-6">A dual-lane (RHW-4) branch off the mainline, with an orthogonal branch. Both lanes on the branch are from the mainline, and the mainline has two fewer lanes at the bottom.</td>
+            <td class="fs-6">A dual-lane (RHW-4) branch off the mainline, with a diagonal branch. Both lanes on the branch are from the mainline, and the mainline has two fewer lanes at the bottom.</td>
+            <td class="fs-6">A dual-lane (RHW-4) branch off the mainline, with a fractional angle (18.4°) branch. Both lanes on the branch are from the mainline, and the mainline has two fewer lanes at the bottom.</td>
+        </tr>
+        <tr>
+            <td><img class="img-invert-dark" src="images/ramps/TypeA3.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeB3.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeC3.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeD3.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeE3.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeF3.png" /></td>
         </tr>
         <tr>
             <td>Type A3</td>
@@ -366,38 +373,96 @@ There are a number of different types of Ramp Interfaces included in the plugin,
             <td>Type E3<br><sup><i>Not available</i></sup></td>
             <td>Type F3<br><sup><i>Not available</i></sup></td>
         </tr>
+        <tr>
+            <td class="fs-6">A triple-lane (RHW-6S) branch off the mainline, with an orthogonal branch. Two of the three lanes on the branch is from the mainline, and the mainline has two fewer lanes at the bottom.</td>
+            <td class="fs-6">A a triple-lane (RHW-6S) branch off the mainline, with a diagonal branch. Two of the three lanes on the branch is from the mainline, and the mainline has two fewer lanes at the bottom.</td>
+            <td class="fs-6">A triple-lane (RHW-6S) branch off the mainline, with a fractional angle (18.4°) branch. Two of the three lanes on the branch is from the mainline, and the mainline has two fewer lanes at the bottom.</td>
+            <td class="fs-6">A triple-lane (RHW-6S) branch off the mainline, with an orthogonal branch. All three lanes on the branch are from the mainline, and the mainline has three fewer lanes at the bottom.</td>
+            <td class="fs-6">A triple-lane (RHW-6S) branch off the mainline, with a diagonal branch. All three lanes on the branch are from the mainline, and the mainline has three fewer lanes at the bottom.</td>
+            <td class="fs-6">A triple-lane (RHW-6S) branch off the mainline, with a fractional angle (18.4°) branch. All three lanes on the branch are from the mainline, and the mainline has three fewer lanes at the bottom.</td>
+        </tr>
     </table>
 </div>
 
-* **A1**: Indicates a single-lane (MIS Ramp) branch off the mainline, with an orthogonal branch. No lanes peel off the mainline.
-* **B1**: Indicates a single-lane (MIS Ramp) branch off the mainline, with a diagonal branch. No lanes peel off the mainline.
-* **C1**: Indicates a single-lane (MIS Ramp) branch off the mainline, with a fractional angle (18.4-degree) branch. No lanes peel off the mainline.
-* **D1**: Indicates a single-lane (MIS Ramp) branch off the mainline, with an orthogonal branch. The branch is formed from one lane of the mainline, and the mainline has one fewer lane at the bottom.
-* **E1**: Indicates a single-lane (MIS Ramp) branch off the mainline, with a diagonal branch. The branch is formed from one lane of the mainline, and the mainline has one fewer lane at the bottom.
-* **F1**: Indicates a single-lane (MIS Ramp) branch off the mainline, splitting at a fractional angle (18.4-degree) from the mainline. The branch is formed from one lane of the mainline, and the mainline has one fewer lane at the bottom.
-* **A2**: Indicates a dual-lane (RHW-4) branch off the mainline, with an orthogonal branch. One of the two lanes on the branch is from the mainline, and the mainline has one fewer lane at the bottom.
-* **B2**: Indicates a dual-lane (RHW-4) branch off the mainline, with a diagonal branch. One of the two lanes on the branch is from the mainline, and the mainline has one fewer lane at the bottom.
-* **C2**: Indicates a dual-lane (RHW-4) branch off the mainline, with a fractional angle (18.4-degree) branch. One of the two lanes on the branch is from the mainline, and the mainline has one fewer lane at the bottom.
-* **D2**: Indicates a dual-lane (RHW-4) branch off the mainline, with an orthogonal branch. Both lanes on the branch are from the mainline, and the mainline has two fewer lanes at the bottom.
-* **E2**: Indicates a dual-lane (RHW-4) branch off the mainline, with a diagonal branch. Both lanes on the branch are from the mainline, and the mainline has two fewer lanes at the bottom.
-* **F2**: Indicates a dual-lane (RHW-4) branch off the mainline, with a fractional angle (18.4-degree) branch. Both lanes on the branch are from the mainline, and the mainline has two fewer lanes at the bottom.
-* **A3**: Indicates a triple-lane (RHW-6S) branch off the mainline, with an orthogonal branch. Two of the three lanes on the branch is from the mainline, and the mainline has two fewer lanes at the bottom.
-* _**B3**: Indicates a triple-lane (RHW-6S) branch off the mainline, with a diagonal branch. Two of the three lanes on the branch is from the mainline, and the mainline has two fewer lanes at the bottom. There are currently no Type B3 ramps available._
-* **C3**: Indicates a triple-lane (RHW-6S) branch off the mainline, with a fractional angle (18.4-degree) branch. Two of the three lanes on the branch is from the mainline, and the mainline has two fewer lanes at the bottom.
-* **D3**: Indicates a triple-lane (RHW-6S) branch off the mainline, with an orthogonal branch. All three lanes on the branch are from the mainline, and the mainline has three fewer lanes at the bottom.
-* _**E3**: Indicates a triple-lane (RHW-6S) branch off the mainline, with a diagonal branch. All three lanes on the branch are from the mainline, and the mainline has three fewer lanes at the bottom. There are currently no Type E3 ramps available._
-* _**F3**: Indicates a triple-lane (RHW-6S) branch off the mainline, with a fractional angle (18.4-degree) branch. All three lanes on the branch are from the mainline, and the mainline has three fewer lanes at the bottom. There are currently no Type F3 ramps available._
+Ramps may have an additional modifier on their name to further describe unique characteristics about the ramp:
 
-Below is a list of the modifiers:
+<div class="table-responsive">
+    <table class="w-auto table-bordered">
+        <tr>
+            <td><img class="img-invert-dark" src="images/ramps/modifier-outside.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/modifier-inside.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/modifier-wide.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/modifier-wye.png" /></td>
+            <td><img class="img-invert-dark" src="" /></td>
+        </tr>
+        <tr>
+            <td>Outside</td>
+            <td>Inside</td>
+            <td>Wide</td>
+            <td>Wye</td>
+            <td>Shift</td>
+        </tr>
+        <tr>
+            <td class="fs-6">The standard ramp where the branch is on the outside (right side in countries with right-hand traffic, left side in those with left-hand traffic).</td>
+            <td class="fs-6">The ramp branch is on the inside (left exit/entrance in countries with right-hand traffic, right exit/entrance for those with left-hand traffic), rather than the expected outside.</td>
+            <td class="fs-6">The ramp branch has a larger separation than the standard version of that type. Most commonly applied to A1 and A2 ramps.</td>
+            <td class="fs-6">Both the branch and the mainline diverge from the path of the mainline at the top in a symmetrical fashion, forming a wishbone or Y-shape. Typically the mainline is the same width as the branch.</td>
+            <td class="fs-6">The mainline undergoes curvature in the midst of the ramp. This occurs when the mainline shifts from an S-type network to a C-type network.</td>
+        </tr>
+        <tr>
+            <td><img class="img-invert-dark" src="images/ramps/modifier-dual.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/modifier-folded.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/modifier-diagonal.png" /></td>
+            <td><img class="img-invert-dark" src="images/ramps/TypeC2.png" /></td>
+        </tr>
+        <tr>
+            <td>Dual</td>
+            <td>Folded</td>
+            <td>Diagonal</td>
+            <td>FA</td>
+        </tr>
+        <tr>
+            <td class="fs-6">There are two ramp branches on the ramp interface. This is most commonly seen with the bidirectional networks (RHW-2, RHW-3, and Double-Decker RHWs), or in conjunction with Shift.</td>
+            <td class="fs-6">There are two ramp branches that curve off at 90-degree angles, in opposite directions. There is only one Folded ramp interface, the RHW-2 D1 Folded.</td>
+            <td class="fs-6">The mainline is diagonal rather than orthogonal. The branch angles are handled the same as if the ramp were orthogonal (i.e. an orthogonal ramp branch off a diagonal ramp interface would still be an A or D-type ramp of some sort).</td>
+            <td class="fs-6">The mainline is at a fractional angle rather than orthogonal. The branch angles are handled the same as if the ramp were orthogonal (i.e. an orthogonal ramp branch off an FA ramp interface would still be an A or D-type ramp of some sort).</td>
+        </tr>
+    </table>
+</div>
 
-* **Inside**: This designation is seen on ramps from one-way RHW networks, and indicates that the ramp branch is on the inside (left exit/entrance in countries with right-hand traffic, right exit/entrance for those with left-hand traffic), rather than the expected outside.
-* **Wide**: This designation indicates that the ramp branch has a larger separation than the standard version of that type, and is most commonly applied to A1 and A2 ramps.
-* **Wye**: This designation indicates that both the branch and the mainline (often when the mainline is of the same width as the branch) both diverge from the path of the mainline at the top in a symmetrical fashion, forming a wishbone or Y-shape.
-* **Shift**: This is an indication that the mainline undergoes curvature in the midst of the ramp. This occurs when the mainline shifts from an S-type network to a C-type network.
-* **Dual**: This is an indication that there are two ramp branches on the ramp interface. This is most commonly seen with the bidirectional networks (RHW-2, RHW-3, and Double-Decker RHWs), or in conjunction with Shift.
-* **Folded**: This is an indication that there are two ramp branches that curve off at 90-degree angles, in opposite directions. There is only one Folded ramp interface, the RHW-2 D1 Folded.
-* **Diagonal**: This designation indicates that the mainline is diagonal rather than orthogonal. The branch angles are handled the same as if the ramp were orthogonal (i.e. an orthogonal ramp branch off a diagonal ramp interface would still be an A or D-type ramp of some sort).
-* **FA**: This designation indicates that the mainline is at a fractional angle rather than orthogonal. The branch angles are handled the same as if the ramp were orthogonal (i.e. an orthogonal ramp branch off an FA ramp interface would still be an A or D-type ramp of some sort).
+### Building Ramp Interfaces
+
+There are three possible ways to construct Ramp Interfaces:
+
+1. **FLEXRamps** - These are ploppable, generally slope-tolerant, and conform to match the surrounding network via overrides. These can be found under the **FLEXRamps** button.
+{{< menu-icon icon="images/icons/rhw-flexramps-button" caption="FLEXRamps" >}}
+
+2. **Draggable Ramp Interfaces (DRI)** - These are pattern-based draggable items, built by dragging the RealHighway network tool according to a specific pattern. Like the FLEXRamps, these will conform to match the surrounding network via overrides.
+
+3. **Puzzle Piece Ramp Interfeces** {{< deprecated >}} - These are conventional static puzzle pieces, many of which have starters attached to their ends. As these are static ploppables, they will not conform to the surrounding network, and one must select the specific puzzle piece for the desired network. This option is largely considered to be deprecated/outdated, with the exception of the few more specialized setups that have yet to receive FLEXRamp or DRI treatments. These can be found under the **Ramps** button.
+{{< menu-icon icon="images/icons/rhw-old-ramps-button" caption="Puzzle Piece Ramp Interfaces" >}}
+
+{{< alert context="warning" >}}
+All types of ramps are not able to be constructed through all methods. Some may be possible to construct through all three methods, while some are only possible with one or two of the methods.
+FLEXRamps and DRIs are the preferred method for most ramp interfaces, and are the only option for most ramps involving elevated RealHighway networks.
+A few specialized types that have not been made into FLEXRamp or DRI setups still exist as puzzle pieces, however.
+A full listing of capabilities can be found in the [RHW Compatibility Guide](/docs/tech-specs/realhighway)
+{{< /alert >}}
+
+In order to use a ramp interface to connect a RealHighway to one's surface network, first place the desired ramp interface.
+Then, from the end of the branch, drag the RealHighway network tool out from it, just like using a starter piece.
+The network will convert to match the ramp.
+From there, continue dragging in the desired pattern, adding curves and transitions as necessary, and intersect the surface street with an At-Grade Crossing. (The Fractional Angle ramps, Types C and F, do not support dragging, and the appropriate Fractional Angle RealHighway (FARHW) puzzle pieces must be used instead.)
+
+{{< img-simple src="images/rhw-ramp-to-road.jpg" >}}
+
+In order to connect to another RealHighway, follow the same process, but instead of forming an At-Grade Crossing, connect the ramp into another Ramp Interface on the other RealHighway.
+
+{{< img-simple src="images/rhw-ramp-to-ramp.jpg" >}}
+
+
+
+
 
 ##### Using FLEXRamps
 
@@ -432,17 +497,29 @@ With the wider RHW networks (provided they are supported by the particular FLEXR
 
 ##### Building Draggable Ramp Interfaces (DRIs) {#dri}
 
-Draggable Ramp Interfaces, or DRIs, are ramp interfaces that are constructed as Pattern-Based Draggables, using the RealHighway network. With the exception of a very few specialized setups, virtually every RHW ramp interface setup can be built through draggable means, and at present, there are some ramps that are only possible as DRIs. Each ramp interface type supported by the system has a special drag pattern, which, when constructed, will subsequently convert into the appropriate on/offramp.
+Draggable Ramp Interfaces, or DRIs, are ramp interfaces that are constructed as pattern-based draggables using the RealHighway network.
+With the exception of a very few specialized setups, virtually every RHW ramp interface setup can be built through draggable means, and at present, there are some ramps that are only possible as DRIs.
+Each ramp interface type supported by the system has a special drag pattern, which when constructed, will automatically convert into the appropriate on/offramp.
 
-The below Table of DRI Patterns shows the exit ramp (entrance ramp for Left-Hand Traffic) setup. The corresponding entrance (or exit in Left-Hand Traffic) can be constructed by using the mirror image of these patterns. The process for overriding a FLEXRamp to have another RHW network as a mainline is identical to that of the FLEXRamps, as shown above. Elevated ramp interfaces can be constructed by dragging the appropriate elevated RHW network (L1-L4) or double-decker RHW through the DRI, which, provided the particular setup is supported by that network, will elevate the ramp. Many setups for narrower networks can be transformed into corresponding versions for wider networks by using the same method. This conversion is most reliable if the overriding network is dragged into the top end of the mainline.
+The process for overriding a FLEXRamp to have another RHW network as a mainline is identical to that of the FLEXRamps, as shown above. Elevated ramp interfaces can be constructed by dragging the appropriate elevated RHW network (L1-L4) or double-decker RHW through the DRI, which, provided the particular setup is supported by that network, will elevate the ramp. Many setups for narrower networks can be transformed into corresponding versions for wider networks by using the same method. This conversion is most reliable if the overriding network is dragged into the top end of the mainline.
 
-Since the drag patterns involve the creation of intersections, the point where the actual mainline/branch split occurs will result in flat terrain, but the rest of a DRI is not limited in this regard.
+
 
 The table below shows all of the basic drag patterns for the DRIs:
 
-{{< img-simple src="images/Dri-table.png" class="border bg-white" alt="DRI Drag Patterns" clickable="yes" >}}
+{{< img-simple src="images/Dri-table.png" alt="DRI Drag Patterns" clickable="yes" >}}
 
-##### Older Puzzle Piece Ramp Interfaces
+{{< alert context="info" >}}
+The drag patterns listed above are applicable for exit ramps in a right-hand traffic (RHD) setup, or entrance ramps in a left-hand traffic (LHD) setup.
+The corresponding entrance (or exit) is constructed by using the mirror image of these patterns.
+{{< /alert >}}
+
+{{< alert context="warning" >}}
+Since the drag patterns involve the creation of intersections, the point where the actual mainline/branch split occurs will result in flat terrain, but the rest of a DRI is not limited in this regard.
+DRIs are otherwise slope-tolerant.
+{{< /alert >}}
+
+##### Older Puzzle Piece Ramp Interfaces {{< deprecated >}}
 
 A set of Puzzle Piece Ramp Interfaces also exists. While it was the original method for constructing ramp interfaces, it has largely become a deprecated method, aside from the few setups not covered otherwise, due to the demands it places on the menu system. The Puzzle Piece Ramp Interfaces exist under two buttons, the Puzzle Piece Ramp Interfaces button, and the Fractional Angle Ramp Interfaces button (which contains all the Type C and Type F ramps). One must find the precise puzzle piece needed for the particular setup on the desired network, and place it. As static puzzle pieces, these ramp interfaces cannot carry overrides.
 
