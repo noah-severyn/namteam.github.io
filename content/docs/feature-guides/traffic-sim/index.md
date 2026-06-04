@@ -9,13 +9,13 @@ draft: false
 images: []
 ---
 <!-- markdownlint-disable MD001 -->
-### Areas of Work
+## Areas of Work
 
 One of the main areas of the work on the NAM Traffic Simulator involved increasing the efficiency of the pathfinder to close to its theoretical maximum. One of the main ways this was initially accomplished was by using a much more accurate version of the pathfinding heuristic than had been available in previous traffic simulators. Also, the Sims' maximum commute time was increased to give them enough time to get to work. These changes allow a smoother distribution of traffic throughout the city, with typically less congestion. At the same time, the congestion that does exist no longer leads to abandonment due to commute time in well-built cities; Sims know that they occasionally have to sit through traffic jams, and are a bit more patient. Better pathfinding also means that Sims act much smarter about finding jobs and routes to them; this also results in less abandonment due to commute time. As in the real world, zones can be farther apart without causing problems; this is especially helpful when building existing cities to scale, which can now be done reliably. Finally, running the pathfinder with near-optimum settings allows the simulator to run up to several times as fast as previous traffic simulators.
 
 The second major area of work on the original Simulator Z involved a more flexible distribution of traffic among the various travel types. In combination with the pathfinder upgrading, this allows buses to be counted toward traffic and congestion, just like all other vehicles. This is a significant change from all previous simulators, and it's an important point to remember when planning your transportation infrastructure. More flexible distribution of traffic also means that the NAM Traffic Simulator is much more dynamic about allowing Sims to choose their transportation. In cities with excellent highways and road capacity, car usage has been measured at over six times that of previous simulators. Yet for cities with less extensive road networks and reasonable mass transit, car usage is actually less than in previous traffic simulators.
 
-### Simulator Changes
+## Simulator Changes
 
 ##### Version 3.0 of the NAM Traffic Simulator contains the following changes from the previous version of the simulator:
 
@@ -45,9 +45,7 @@ The second major area of work on the original Simulator Z involved a more flexib
 * **Capacities and speeds of one-way roads have been raised** to duplicate the real-world advantage of these roads.
 * **Street capacities have been raised** so that they reflect the capacities implied by their speed limits.
 
-### Simulator Versions
-
-##### What are the different versions of the NAM Traffic Simulator, and how are they used?
+## Simulator Versions
 
 The NAM Traffic Simulator comes in five capacity versions - Classic, Low, Medium, High, and Ultra. The name of the version refers to the network capacities in the simulator. The name "Classic" refers to the fact that the capacities are similar to those used in the original Maxis traffic simulator. The following is a list of the network capacities for each version of the simulator; all capacities are per tile (for two-tile networks such as the Avenue and Highways, multiply the value by 2):
 
@@ -86,21 +84,29 @@ The NAM Traffic Simulator comes in five capacity versions - Classic, Low, Medium
 
 Which simulator version is appropriate for a particular city depends primarily on three things: the population of the city, the amount of rapid transit (rails) available, and the type of simulator used. Less capacity is needed for lower population cities, but less capacity is also required for cities with a lot of rapid transit. Finally, as mentioned above, the Classic and Low capacity simulators use the best pathfinder, and will therefore give the best simulation results if they can be used. So pick a simulator version based on these three factors; if it doesn't seem to be the right capacity, you can always switch it out for a different capacity version by rerunning the NAM installer. Experience has shown that in large cities, the effects of such a switch may take up to five years to fully manifest. You can tell when things have stabilized by looking at the Traffic Volume Graph in the following way: First, let the game run until there is a sudden shift in traffic patterns. Sometimes, this may take over a year. Then run the game until you go at least a full year without any sudden change in traffic patterns. At that point, the transition to the new capacity simulator is complete. All this can be done without any harmful effects to your city.
 
-### The Traffic Simulator Configuration Tool (TSCT) {#TSCT}
+For further questions about using the NAM Traffic Simulator, please see either the [NAM Unified Traffic Simulator and Data View Help](http://sc4devotion.com/forums/index.php?topic=6812.0) thread on SC4 Devotion or the [NAM Traffic Simulator and Data View Support Thread](https://community.simtropolis.com/forums/topic/29437-nam-traffic-simulator-and-data-view-support-thread/) on Simtropolis.
 
-*If you don't know what the Traffic Simulator Configuration Tool (TSCT) is, or if you don't use it, you may skip this section.*
+## The Traffic Simulator Configuration Tool (TSCT) {#TSCT}
 
-As of NAM 45, the TSCT is discontinued and no longer available in NAM releases. With NAM 45, the NAM Traffic Simulator has been upgraded to Simulator Z 3.0, resulting in further optimizations to both the speed and accuracy of the simulation, and improved network utilization.  The improved pathfinding in the new traffic simulator makes it much more responsive to user actions in building a city. To significantly bump up sim willingness to use transit, simply add more transit stations and/or more transit lines.
+{{< deprecated >}} *The TSCT is no longer supported.*
 
-The extremely thorough testing done on Simulator Z 3.0 determined that many properties of the simulator are more sensitive than previously expected, and that many of the modifications previously allowed in the TSCT actually can significantly degrade the performance of the traffic simulation, to levels we found unacceptable. It was discovered that many of the properties adjustable in the TSCT affect the simulation as a whole, and not just the function that is documented for them. This means that many properties in the TSCT that were thought to be safe to modify actually are not, and modifying them will almost always degrade the performance of the simulator. Second, with the significant improvement in simulator pathfinding, some properties of the simulator have become self-tuning, and this makes the settings for them in the TSCT unnecessary.
+As of NAM 45, the TSCT is discontinued and no longer available in NAM releases.
+With NAM 45, the NAM Traffic Simulator has been upgraded to **Simulator Z 3.0**, resulting in further optimizations to both the speed and accuracy of the simulation and improved network utilization.
+The improved pathfinding in the new traffic simulator makes it much more responsive to user actions in building a city.
+To significantly bump up sim willingness to use transit, simply add more transit stations and/or more transit lines.
+
+The extremely thorough testing done on **Simulator Z 3.0** determined that many properties of the simulator are more sensitive than previously expected, and that many of the modifications previously allowed in the TSCT actually can significantly degrade the performance of the traffic simulation to levels the NAM Team found unacceptable.
+Firstly, it was discovered that many of the properties adjustable in the TSCT affect the simulation as a whole, and not just the function that is documented for them. This means that many properties in the TSCT that were thought to be safe to modify actually were not, and modifying them will almost always degrade the performance of the simulator.
+Secondly, with the significant improvement in simulator pathfinding, some properties of the simulator have become self-tuning, which makes tweaking them in the TSCT unnecessary.
+
 
 Use of the TSCT is no longer endorsed by the NAM Team, and we cannot provide technical support to users who have modified the "unsafe" properties in the Traffic Simulator via the TSCT or other means.
 
 Here is the disposition of the various fields that were customizable in the TSCT:
 
-* **Mass Transit Usage:** This field is now always set to the Medium value; the actual wealth and transit distributions can be seen int the greyed-out boxes on the right, in the box labeled "Custom". However, the label "American" no longer applies to these values, as the increased flexibility of the new simulator allows the player to set the balance between car and mass transit simply by the way they build their transit systems. A city with lots of highways but little mass transit will encourage car usage, while a city with with lots of mass transit and few or no highways will encourage mass transit usage.
+* **Mass Transit Usage:** This field is now always set to the Medium value; the actual wealth and transit distributions can be seen in the greyed-out boxes on the right, in the box labeled "Custom". However, the label "American" no longer applies to these values, as the increased flexibility of the new simulator allows the player to set the balance between car and mass transit simply by the way they build their transit systems. A city with lots of highways but little mass transit will encourage car usage, while a city with with lots of mass transit and few or no highways will encourage mass transit usage.
 * **Highway Bus Lanes:** Contrary to the description of this field, checking its box does not increase bus usage. In fact, it degraded simulator performance slightly.
-* **Park & Ride:** This is discussed in its own section below.
+* **Park & Ride:** Refer to the [Park & Ride](/docs/feature-guides/traffic-simulator/#park--ride) section below.
 * **Buses contribute to traffic:** This property is always set in the simulator, as it is necessary for optimal operation of the pathfinder.
 * **Monthly Fares per Sim per Tile:** For people who really want to modify these values, they can safely be changed in the same way that the Park and Ride feature can be changed, as described below.
 * **Monthly Costs per Network Tile:** As with the previous property, these values can safely be changed in the same way that the Park and Ride feature can be changed.
@@ -112,13 +118,25 @@ Here is the disposition of the various fields that were customizable in the TSCT
 * **Network Capacity Multiplier:** This field is obsolete, as only the five listed capacities are supported.
 * **Intersection Effect Multiplier:** This is set to its optimal value and should not be changed.
 * **Vehicle Air Pollution:** Changing the value of this field is no longer supported.
-* **Data View:** For now, customization of these data views is no longer supported. This is configurable in the NAM installer.
+* **Data View:** For now, customization of these data views manually is no longer supported, but a few options are available in the NAM installer. See [Data View Plugins](/docs/feature-guides/data-view-plugins).
 
 ### Park & Ride
 
-Park & Ride is an option that was only supported in the TSCT. Park and Ride changes the game slightly so that cars cannot reach their destination directly. Instead, those Sims who prefer to drive must park near some sort of mass transit station and then take mass transit to the stop closest to their workplace. From there, they must walk the rest of the way. For this to work well, you need to have an extensive mass transit system. You also need to build parking lots and/or parking garages near key mass transit stops; generally the best places are at the edges of your residential areas that are closest to your jobs. Or you could just build parking facilities near the Sims' jobs (the ones that come with buildings generally don't count), but this really defeats the main purpose of Park and Ride.
+Park and Ride tweaks the simulation the game slightly to prevent cars from reaching their destination directly.
+Instead, those Sims who prefer to drive must park near a mass transit station, and then take mass transit to the stop closest to their workplace.
+From there, they must walk the rest of the way.
+For this to work well, you need to have both an extensive mass transit system, and parking lots and/or parking garages near key mass transit stops; generally the best places are at the edges of your residential areas that are closest to your jobs.
+Alternatively, you may build parking facilities near the Sims' jobs so they can drive and walk the remainder distance, but this sort of defeats the main purpose of Park and Ride as Sims will never need to board mass transit.
 
-The ability to enable the Park & Ride functionality will eventually be incorporated into the NAM installer. Until then, this feature can be enabled only by modifying the traffic simulator file directly. This can be done with [Ilive's Reader (0.9.3)](https://community.simtropolis.com/files/file/21343-ilive-reader-093/); you can find the manual for the Reader [here](https://community.simtropolis.com/files/file/21372-the-reader-beginners-guide/).
+{{< alert context="info">}}
+The Park & Ride is currently distributed as a separate add-in to the NAM, and is available at [SC4Evermore](https://www.sc4evermore.com/index.php/downloads/download/6-network-addon-mod-nam/134-nam-park-and-ride-traffic-simulator-plugins).
+{{< /alert >}}
+
+### Manual Modifications
+
+{{< details summary="Manual modification instructions">}}
+As described above, three properties *are* able to be modified without detrimentally affecting the simulator, and they must be done manually with [Ilive's Reader (0.9.3)](https://community.simtropolis.com/files/file/21343-ilive-reader-093/).
+If you are unfamiliar with the Reader, it's manual can be found [here](https://community.simtropolis.com/files/file/21372-the-reader-beginners-guide/).
 
 1. To turn on the Park & Ride feature of the traffic simulator, open the Reader and click the Open button. Navigate to the folder containing your traffic simulator and select it. If only the "Name" column appears in the right pane, you will have to click on the first "Exemplar file" row in the left pane to make all the other columns in the right pane visible.
 
@@ -129,5 +147,4 @@ The ability to enable the Park & Ride functionality will eventually be incorpora
 The **Monthly Fares per Sim per Tile** and the **Monthly Costs per Network Tile** can be modified in a similar fashion; the first one of these is named "Income per tile by travel type" in the simulator. Note that when you select a property in the reader, some helpful information about that property is displayed in the little window at the bottom.
 
 These three properties are the only ones in the traffic simulator that are safe to modify. Modifying other properties, especially those that interact with the pathfinder, will almost always degrade the performance of the traffic simulator. The NAM Team cannot support installations where properties other than the three described above have been modified.
-
-For further questions about using the NAM Traffic Simulator, please see either the [NAM Unified Traffic Simulator and Data View Help](http://sc4devotion.com/forums/index.php?topic=6812.0) thread on SC4 Devotion or the [NAM Traffic Simulator and Data View Support Thread](https://community.simtropolis.com/forums/topic/29437-nam-traffic-simulator-and-data-view-support-thread/) on Simtropolis.
+{{< /details >}}
