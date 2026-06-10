@@ -50,11 +50,14 @@ Version 3.0 also carries a number of other improvements made from previous traff
 * **Capacities and speeds of one-way roads have been raised** to duplicate the real-world advantage of these roads.
 * **Street capacities have been raised** so that they reflect the capacities implied by their speed limits.
 
-## Simulator Versions
+## Simulator Variants
 
-The NAM Traffic Simulator comes in five capacity versions - Classic, Low, Medium, High, and Ultra. The name of the version refers to the network capacities in the simulator. The name "Classic" refers to the fact that the capacities are similar to those used in the original Maxis traffic simulator. The following is a list of the network capacities for each version of the simulator; all capacities are per tile (for two-tile networks such as the Avenue and Highways, multiply the value by 2):
+The NAM Traffic Simulator comes in five capacity versions - Classic, Low, Medium, High, and Ultra.
+The name of the version refers to the network capacities in the simulator.
+The name "Classic" refers to the fact that the capacities are similar to those used in the original Maxis traffic simulator.
+The following is a list of the network capacities for each version of the simulator; all capacities are per tile (for two-tile networks such as the Avenue and Highways, multiply the value by 2):
 
-{{< table class="table table-md-responsive w-auto table-bordered border-default table-striped-columns" >}}
+{{< table class="table table-md-responsive table-striped-columns" >}}
 |Network|Classic|Low|Medium|High|Ultra|
 |:----|:----:|:---:|:---:|:---:|:---:|
 |Street:|750|1500|2400|3600|7200|
@@ -68,26 +71,38 @@ The NAM Traffic Simulator comes in five capacity versions - Classic, Low, Medium
 |Rail:|5000|10000|16000|30000|65200|
 {{< /table >}}
 
-{{< table class="table table-md-responsive w-auto table-bordered border-default table-striped-columns" >}}
-|Vehicle Type|Rail|
-|:----|:----:|
-|Passenger Train|140|
-|Freight Train|105|
+Each of the traffic simulator variants shares the same defined network speeds, measured in kph.
+
+{{< table class="table table-md-responsive" >}}
+|                                     | Pedestrian | Cars | Bus | Truck | Rail (Passenger) | Rail (Freight) | Subway | El Rail | Monorail |
+| ----------------------------------- | ---------- | ---- | --- | ----- | ---------------- | -------------- | ------ | ------- | -------- |
+| Street                              | 15         | 30   | 25  | 25    | -                | -              | -      | -       | -        |
+| Road                                | 15         | 50   | 45  | 40    | -                | -              | -      | -       | -        |
+| Avenue                              | 15         | 50   | 45  | 45    | -                | -              | -      | -       | -        |
+| One-Way Road                        | 15         | 75   | 65  | 60    | -                | -              | -      | -       | -        |
+| Highway (Ground, Elevated, and RHW) | -          | 150  | 150 | 130   | -                | -              | -      | -       | -        |
+| Subway                              | -          | -    | -   | -     | -                | -              | 105    | -       | -        |
+| Elevated Rail/Ground Light Rail     | -          | -    | -   | -     | -                | -              | -      | 115     | -        |
+| Rail                                | -          | -    | -   | -     | 140              | 105            | -      | -       | -        |
+| Monorail                            | -          | -    | -   | -     | -                | -              | -      | -       | 225      |
 {{< /table >}}
 
-{{< table class="table table-md-responsive w-auto table-bordered border-default table-striped-columns" >}}
-|Vehicle Type|Ground/Elevated Light Rail/Subway|
-|:----|:----:|
-|Light Rail Train/Tram|115|
-{{< /table >}}
+### Choosing a V ariant
 
-{{< table class="table table-md-responsive w-auto table-bordered border-default table-striped-columns" >}}
-|Vehicle Type|Monorail/High Speed Rail|
-|:----|:----:|
-|Monorail/High Speed Rail Train|225|
-{{< /table >}}
+Less capacity is needed for lower population cities, but less capacity is also required for cities with a lot of rapid transit.
+Additionally, as mentioned [above](/docs/feature-guides/traffic-simulator/#simulator-changes-with-version-30), the Classic and Low capacity simulators are able to use the best pathfinder since they have to move fewer sims.
+If they can be used, these Classic and Low will thereby give the best simulation results.
 
-Which simulator version is appropriate for a particular city depends primarily on three things: the population of the city, the amount of rapid transit (rails) available, and the type of simulator used. Less capacity is needed for lower population cities, but less capacity is also required for cities with a lot of rapid transit. Finally, as mentioned above, the Classic and Low capacity simulators use the best pathfinder, and will therefore give the best simulation results if they can be used. So pick a simulator version based on these three factors; if it doesn't seem to be the right capacity, you can always switch it out for a different capacity version by rerunning the NAM installer. Experience has shown that in large cities, the effects of such a switch may take up to five years to fully manifest. You can tell when things have stabilized by looking at the Traffic Volume Graph in the following way: First, let the game run until there is a sudden shift in traffic patterns. Sometimes, this may take over a year. Then run the game until you go at least a full year without any sudden change in traffic patterns. At that point, the transition to the new capacity simulator is complete. All this can be done without any harmful effects to your city.
+Which simulator version is appropriate for a particular city depends primarily on three things:
+1. the population of the city,
+2. the amount of rapid transit (rails) available, and
+3. the type of simulator used.
+
+Pick a simulator version based on these three factors; if it doesn't seem to be the right capacity, you can always switch it out for a different capacity version by rerunning the NAM installer.
+Experience has shown that in large cities, the effects of such a switch may take up to five years to fully manifest.
+You can tell when things have stabilized by monitoring the Traffic Volume Graph: let the game run until there is a sudden shift in traffic patterns (this may take over a year), then run the game until you go at least a full year without any sudden change in traffic patterns.
+At that point, the transition to the new capacity simulator is complete.
+Switching between simulator variants using this methodology can be done without any harmful effects to your city.
 
 For further questions about using the NAM Traffic Simulator, please see either the [NAM Unified Traffic Simulator and Data View Help](http://sc4devotion.com/forums/index.php?topic=6812.0) thread on SC4 Devotion or the [NAM Traffic Simulator and Data View Support Thread](https://community.simtropolis.com/forums/topic/29437-nam-traffic-simulator-and-data-view-support-thread/) on Simtropolis.
 
