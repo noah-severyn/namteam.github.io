@@ -74,20 +74,23 @@ The following is a list of the network capacities for each version of the simula
 Each of the traffic simulator variants shares the same defined network speeds, measured in kph.
 
 {{< table class="table table-md-responsive" >}}
-|                                     | Pedestrian | Cars | Bus | Truck | Rail (Passenger) | Rail (Freight) | Subway | El Rail | Monorail |
-| ----------------------------------- | ---------- | ---- | --- | ----- | ---------------- | -------------- | ------ | ------- | -------- |
-| Street                              | 15         | 30   | 25  | 25    | -                | -              | -      | -       | -        |
-| Road                                | 15         | 50   | 45  | 40    | -                | -              | -      | -       | -        |
-| Avenue                              | 15         | 50   | 45  | 45    | -                | -              | -      | -       | -        |
-| One-Way Road                        | 15         | 75   | 65  | 60    | -                | -              | -      | -       | -        |
-| Highway (Ground, Elevated, and RHW) | -          | 150  | 150 | 130   | -                | -              | -      | -       | -        |
-| Subway                              | -          | -    | -   | -     | -                | -              | 105    | -       | -        |
-| Elevated Rail/Ground Light Rail     | -          | -    | -   | -     | -                | -              | -      | 115     | -        |
-| Rail                                | -          | -    | -   | -     | 140              | 105            | -      | -       | -        |
-| Monorail                            | -          | -    | -   | -     | -                | -              | -      | -       | 225      |
+|                                 | Pedestrian     | Cars | Bus | Truck | Rail (Passenger) | Rail (Freight) | Subway | El Rail | Monorail |
+| ------------------------------- | -------------- | ---- | --- | ----- | ---------------- | -------------- | ------ | ------- | -------- |
+| Street                          | 15             | 30   | 25  | 25    | -                | -              | -      | -       | -        |
+| Road                            | 15             | 50   | 45  | 40    | -                | -              | -      | -       | -        |
+| Avenue                          | 15             | 50   | 45  | 45    | -                | -              | -      | -       | -        |
+| One-Way Road                    | 15             | 75   | 65  | 60    | -                | -              | -      | -       | -        |
+| Highway (Ground and Elevated)   | -              | 150  | 150 | 130   | -                | -              | -      | -       | -        |
+| RealHighway                     | 10<sup>1</sup> | 150  | 150 | 130   | -                | -              | -      | -       | -        |
+| Subway                          | -              | -    | -   | -     | -                | -              | 105    | -       | -        |
+| Elevated Rail/Ground Light Rail | -              | -    | -   | -     | -                | -              | -      | 115     | -        |
+| Rail                            | -              | -    | -   | -     | 140              | 105            | -      | -       | -        |
+| Monorail                        | -              | -    | -   | -     | -                | -              | -      | -       | 225      |
 {{< /table >}}
 
-### Choosing a V ariant
+<span class="fs-6">**<sup>1</sup>** Pedestrian paths are supported on RHW-2 only, and no other RealHighway network.</span><br>
+
+### Choosing a Variant
 
 Less capacity is needed for lower population cities, but less capacity is also required for cities with a lot of rapid transit.
 Additionally, as mentioned [above](/docs/feature-guides/traffic-simulator/#simulator-changes-with-version-30), the Classic and Low capacity simulators are able to use the best pathfinder since they have to move fewer sims.
