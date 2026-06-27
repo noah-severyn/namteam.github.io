@@ -1,21 +1,25 @@
 ---
 title : "The NAM Traffic Simulator"
 url: "/docs/feature-guides/traffic-simulator"
-description: "The NAM Traffic Simulator is a traffic simulator that is derived from the original Maxis traffic simulator, but is also built upon the knowledge gained from all previous NAM traffic simulators, including work by the7trumpets, Tropod, jplumbley, mott, and z."
-lead: "The NAM Traffic Simulator is a traffic simulator that is derived from the original Maxis traffic simulator, but is also built upon the knowledge gained from all previous NAM traffic simulators, including work by the7trumpets, Tropod, jplumbley, mott, and z. The NAM Traffic Simulator was originally incorporated into the NAM as Simulator Z, as at that time there were a number of different traffic simulators available in the NAM. Internally, this traffic simulator is still known as Simulator Z, and the latest version is Simulator Z v3.0."
+description: "The traffic simulator is the in-game algorithm that defines how sims find their way to and from their job. It is heavily speculated that Maxis intentionally nerfed the traffic simulator to accommodate the computers of the time, and the NAM Traffic Simulator unlocks this. In the base game, sims will find the <i>shortest</i> commute. with the NAM Traffic Simulator, sims will find the <i>fastest</i> commute."
+lead: "The traffic simulator is the in-game algorithm that defines how sims find their way to and from their job. It is heavily speculated that Maxis intentionally nerfed the traffic simulator to accommodate the computers of the time, and the NAM Traffic Simulator unlocks this. In the base game, sims find the <i>shortest</i> commute. with the NAM Traffic Simulator, sims find the <i>fastest</i> commute. This traffic simulator is now smarter than ever too. To encourage sims to take highways, create more highways and interchanges; to encourage use of mass transit, create a robust network of mass transit networks and stations."
 date: 2022-09-06T10:09:26+00:00
 lastmod: 2022-09-06T10:09:26+00:00
 draft: false
 images: []
 ---
-<!-- markdownlint-disable MD001 -->
+
 ## Areas of Work
+
+The NAM Traffic Simulator is a traffic simulator that is derived from the original Maxis traffic simulator, but is also built upon the knowledge gained from all previous NAM Traffic Simulators, including work by the7trumpets, Tropod, jplumbley, mott, and z.
+The NAM Traffic Simulator has been through many revisions, A through E; the current iteration is known internally "Simulator Z".
+The latest version is Simulator Z version 3.0.
 
 One of the main areas of the work on the NAM Traffic Simulator involved increasing the efficiency of the pathfinder to close to its theoretical maximum. One of the main ways this was initially accomplished was by using a much more accurate version of the pathfinding heuristic than had been available in previous traffic simulators. Also, the Sims' maximum commute time was increased to give them enough time to get to work. These changes allow a smoother distribution of traffic throughout the city, with typically less congestion. At the same time, the congestion that does exist no longer leads to abandonment due to commute time in well-built cities; Sims know that they occasionally have to sit through traffic jams, and are a bit more patient. Better pathfinding also means that Sims act much smarter about finding jobs and routes to them; this also results in less abandonment due to commute time. As in the real world, zones can be farther apart without causing problems; this is especially helpful when building existing cities to scale, which can now be done reliably. Finally, running the pathfinder with near-optimum settings allows the simulator to run up to several times as fast as previous traffic simulators.
 
 The second major area of work on the original Simulator Z involved a more flexible distribution of traffic among the various travel types. In combination with the pathfinder upgrading, this allows buses to be counted toward traffic and congestion, just like all other vehicles. This is a significant change from all previous simulators, and it's an important point to remember when planning your transportation infrastructure. More flexible distribution of traffic also means that the NAM Traffic Simulator is much more dynamic about allowing Sims to choose their transportation. In cities with excellent highways and road capacity, car usage has been measured at over six times that of previous simulators. Yet for cities with less extensive road networks and reasonable mass transit, car usage is actually less than in previous traffic simulators.
 
-A detailed analysis of the inner-workings of the traffic simulator can be read in the [Guide to the Operation of the Traffic Simulator](https://www.sc4devotion.com/forums/index.php?topic=10261.0) thread at SC4Devotion.
+A detailed analysis of the inner-workings of the traffic simulator can be read in the [Guide to the Operation of the Traffic Simulator](https://www.sc4devotion.com/forums/index.php?topic=10261.0) topic at SC4Devotion, and the development and theory behind the Simulator Z can be traced in the [NAM Traffic Simulator Development and Theory](https://www.sc4devotion.com/forums/index.php?topic=5382) topic at SC4Devotion.
 
 ## Simulator Changes with Version 3.0
 
