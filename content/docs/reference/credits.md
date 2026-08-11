@@ -10,11 +10,15 @@ images: []
 url: "docs/reference/credits"
 ---
 
+## Contributors
+
 **The NAM Team and Associates (Active Members as of NAM {{< param docsversion >}})**
 
 - Abigail
 - b22rian
 - CaptCity
+- CasperVg
+- Clarence
 - DebussyMan
 - dragonsteincole
 - Durfsurn
