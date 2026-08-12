@@ -14,26 +14,29 @@ url: "docs/getting-started/frequently-asked-questions"
 
 Take a peek at the [Overview](/docs/getting-started/what-is-the-nam/) page.
 
-### What is the difference between NAM and NAMLite?
-
-NAMLite is a bite-sized package for users looking for a minimal install. Think of NAMLite as a collection of the NAM's "best hits".
-
 ### What all is included in the NAM?
 
-Check out the [Content Overview](/docs/getting-started/what-is-the-nam/) page for a brief look, and the full [Features](/docs/feature-guides) section of this documentation for a more in-depth look. The contents of the latest version can be found in the [History](/docs/reference/nam-version-history/) section.
+Check out the [Content Overview](/docs/getting-started/what-is-the-nam/) page for a quick overview, or consult the various [Feature Guides](/docs/feature-guides) for a more in-depth look.
+The changes in the latest version can be found in the [Version History](/docs/reference/nam-version-history/) list.
+
+### What is the difference between NAM and NAMLite?
+
+NAM Lite is a small subset of the NAM, including all bugfixes and a much smaller set of features.
+The NAMLite is a bite-sized package for users looking for a minimal install.
+Think of NAM Lite as a collection of the NAM's "best hits".
+A full feature comparison between the two versions can be found [here](/download-the-nam#feature-comparison).
 
 ### What is the 4GB Patch?
 The 4GB Patch is a small patch, usable on any 32-bit executable file (not just SimCity 4) that allows the application to access 4GB RAM instead of a mere 2GB, and has historically been used in many modding communities associated with older games. The application will only use at most 2GB of RAM, even if you have far more available. This can also happen if your system is running a 32-bit version of Windows (i.e. if you're still running Windows XP), and/or you have less than 4GB RAM. For more information, refer to [A Note About the "4GB Patch"](/docs/getting-started/troubleshooting-installation#4gb-patch).
 
 ### Does this mod work on a Mac?
 
-Yes. The NAM is a cross-platform mod, with a cross-platform Java installer. Being cross-platform, it will run on macOS, provided Java has been installed. The version of Java included in this package is for Windows users, so it will not work for you. Instead, go to [Adoptium](https://adoptium.net/) or [Oracle](https://www.java.com/) to download a Mac version of Java. Also, since Aspyr updated the Mac port of SimCity 4 to be a 64-bit application (and as of January 2023, has also implemented Apple Silicon support), the 4GB Patch is NOT required for Mac users.
-
-One quirk to note is that NAM network items in TAB Loops will require the user to press **Ctrl+Tab** or **Ctrl+Shift+Tab** to cycle through, rather than the mere TAB or Shift-TAB on other operating systems (or the earlier Mac version), in order to access all the items available under each menu button.
+As of NAM 50, no. If you are a macOS player, refer to the [Note to Mac Users](/docs/getting-started/installation#mac) which explains the options available to you.
 
 ### How much hard drive space will the NAM require?
 
-It depends on the options you install.  Expect about about 1.2GB for a full NAM install with the RealHighway plugin, down to about 30MB if you've installed NAM Lite.
+It depends on the options you install.
+Expect somewhere between 1GB for a full NAM install with the RealHighway plugin, down to about 30MB if you've installed NAM Lite.
 
 ### Will this mod impact game performance?
 
