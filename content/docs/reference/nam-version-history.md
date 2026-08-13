@@ -12,6 +12,69 @@ url: "docs/reference/nam-version-history"
 <!-- markdownlint-disable MD025 -->
 # Transitional Releases (2024 through 2025)
 
+## Version 50 (___ August 2026)
+This release is the first to rely on the NAM DLL. As such, this release is incompatible with the macOS editions of the game, and only compatible with the digital Windows edition.
+
+* **DLL Features:**
+  * Added a custom RUL2 engine: This is a substantial new feature of the DLL which:
+    * makes override networks much more stable,
+    * allows for tighter footprints (e.g. crossings of override networks that previously had to be placed one tile apart may now be placed directly adjacent to each other),
+    * reduces the size of the NAM codebase by almost 90% and by more than 10 million lines, making it easier to maintain and reducing the chance of bugs (a lot of work has gone into this by the entire team, and it is why, starting with NAM 50, the NAM cannot be used without the DLL anymore),
+    * improves performance (the initial city load time is reduced by a huge amount, as a result of the controller size reduction),
+    * removes the strict requirement for the 4GB patch (though usage is still recommended),
+    * removes the Low-RAM/No-RHW controller as the full NAM Controller is now less than 60 MB.
+  * Streets can now be dragged diagonally.
+  * Auto-connect of the Street and RHW networks has been disabled.
+  * Added a fix for the Eternal Commuter Loop bug: Neighbor-to-neighbor routes that connect the city to the North and the city to the West are blocked by the path finder, so loops cannot form anymore. All other connections, such as South-to-North or East-to-West, are still allowed.
+  * Keyboard shortcuts have been added for all missing networks: Monorail (CTRL+Y), One-Way Road (Shift+E), Ground Highway (Alt+E) and RHW (Control+E).
+  * Tunnels can now be built using the Street network.
+  * Added slope-tolerance improvements for various network elements:
+    * 45 degree curves of single-tile networks are slope-conforming now.
+    * All starter pieces and many FLEX pieces are slope-tolerant now.
+    * The FLEX On-slope pieces have been improved:
+      * Their footprint has been minimized.
+      * The sinkhole bug associated with them is fixed.
+      * Networks can be dragged through the On-slope transition piece.
+  * The invisible cursor tile has been removed from all FLEX pieces. The handle does not interfere with any lots or networks anymore.
+  * The ferry clearance height of bridges has been reduced from 30 to 20 meters.
+  * Added an option to disable each individual DLL patch for debugging purposes, by installing the optional [NAM.ini](https://github.com/NAMTeam/nam-dll/blob/main/src/NAM.ini) file.
+  * Added an option to allow RCI zones to acess RHW networks (disabled by default).
+* **Street Network and SAM Improvements:**
+  * The Diagonal Street Helper Pieces have been removed, as diagonal streets are now draggable.
+  * Load order issue between MHO and diagonal streets has been fixed.
+  * Added new intersections of diagonal street with road corners.
+  * The SAM code has received a complete overhaul, with the native diagonal Streets in mind. Some SAM textures have been added or improved.
+  * Minor fixes for RRW × SAM crosslinks.
+  * SAM × Road diverter instability has been fixed.
+  * Added SAM × Avenue O×O Long T intersections as well as several SAM × Road/OWR diagonal intersections.
+  * Several missing or buggy SAM paths have been fixed.
+* **RealHighway Improvements:**
+  * Diagonal RHW-2 network transitions have been fixed.
+  * The D1 FLEX-ramp has been improved to make it work even when placed parallel to each other.
+  * A pathing issue with DDRHW-4 to Dual RHW-4 FLEX Transition has been fixed.
+  * Some improvements for HRW × RHW crosslinks.
+* **RealRailway Improvements:**
+  * RRW-style textures for some pre-RRW/legacy configurations have been added.
+  * A few missing legacy paths for RRW WRC pieces have been restored.
+  * The diagonal bridges (DBE) have been made compatible with RRW.
+  * Some issues with diagonal STR RULs have been resolved.
+  * The slope mods of RRW and MHO have been removed. Install the NAM Tunnel And Slope Mod instead. (In the past, these slope mods were included to configure the tunnel portals of these NAM networks. This has now been implemented universally using Exemplar Patching (for RRW, MHO and Street tunnels), which works with all slope mods as long as the Resource Loading Hooks DLL is present.)
+* **Other Various Improvements:**
+  * All sinkhole bugs have been fixed.
+  * Road Roundabout code has been revised for better stability.
+  * UI fixes for transit stations
+  * The FLUPs tab loop has been split into multiple shorter tab loops in preparation for submenus.
+  * A load order issue between MHO and DBE files has been resolved.
+  * EU textures for OWR × AVE-6/TLA-7 have been fixed.
+  * A few texturing improvements for Street × Road/OWR and for Avenue curbs
+  * Various fixes to base content, including Avenue × Avenue O×D intersections, and directionality on diagonal OWR intersections
+  * The GLR-4 models have been updated to make them independent from the GLR-3 style.
+  * Small fixes for paths and models of GLR Tram-in-Road
+  * Auto-place functionality of legacy FAR puzzle pieces has been disabled to avoid conflicts with TE lots.
+  * A mirroring issue with the stop sign has been fixed.
+  * An issue with the light cone prop of pedmalls has been fixed.
+  * The T21s for Classic Pedmalls have been updated.
+
 ## Version 49 (2 March 2025)
 
 * **Bridge Additions and Improvements**:								
