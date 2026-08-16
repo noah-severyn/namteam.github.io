@@ -1156,17 +1156,7 @@ The items in this group are not in any particular or specific format.
 
 ##### Street
 
-* Roundabouts. To trigger the initial Street roundabout, you must draw a Street Circle in a 2x2 tile area. There currently exists many variations with one, two, three &/or four orthogonal &/or Diagonal Streets stemming from this initial 2x2 tile area. NOTE: Requires an additional Plugin. See [Installation Instructions](/docs/reference/installation-notes/) for details.
-* Diagonals. This requires 5 or more tiles to be zig zagged, like a set of steps or stairs, before the diagonals are triggered. **Note:** Requires an additional Plugin. See [Installation Instructions](/docs/reference/installation-notes/) for details.
 
-    <div class="row mx-0 g-1">
-    <div class="col text-center">{{< img-simple src="images/diagonal_streets.jpg" class="img-fluid" >}}</div>
-    </div>
-
-* You can also build a diagonal street via Diagonal Street helper puzzle pieces which can be used to build diagonal streets on sloped terrains or intersections. There are two types of them: normal puzzle pieces and construction puzzle pieces.
-    <div class="row mx-0 g-1">
-    <div class="col text-center">{{< img-simple src="images/diagonal_streets2.jpg" class="img-fluid" >}}</div>
-    </div>
 
 ##### Road
 

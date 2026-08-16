@@ -96,7 +96,8 @@ Select SAM sets include bridge support. To access the SAM's bridge options, one 
 
 ## Tunnels
 
-The base Street network **does NOT support tunnels**, and accordingly, neither do any of the SAM's Street-based override networks. While certain slope settings may permit a tunnel to appear, it will be completely non-functional, due to hardcoded limitations that prevent traffic from using it. There is no known solution to this limitation at present. The only possible workaround at present is to transition to another network that does support tunnels.
+The base street network **does** support tunnels, so accordingly, each of the SAM's street-based override networks do too.
+However, note that only a few street tunnel models have been created to date, so the tunnel may not match the appearance of the active SAM network.
 
 ## Network Capabilities
 

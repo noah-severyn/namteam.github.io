@@ -114,17 +114,6 @@ The following Puzzle Pieces are now included with this Mod:
 
 **Please note**: Many Puzzle Piece items now contain a Diagonal component (where applicable) & cover many possible configurations, with either the lower &/or upper portion of the Puzzle Piece.
 
-#### **Diagonal Street Helper Pieces**
-
-Menu button contains the following FLEX and Puzzle Pieces:
-
-* Construction Piece (long version) [FLEX]
-* Construction Piece (medium version) [FLEX]
-* Construction Piece (short version) [FLEX]
-* Diagonal Street Puzzle Piece
-* Diagonal Street Puzzle Piece (Switch right)
-* Diagonal Street Puzzle Piece (Switch left)
-
 #### **Road Puzzle Pieces**
 
 Menu button contains the following Puzzle Pieces:
@@ -1071,13 +1060,13 @@ With the advent of UDI for EI Rail, it should now be possible to take a UDI pass
 
 For more information regarding UDI EI Rail, please see the [Technical Notes](/docs/reference/technical-information).
 
-### Additional Intersections & Junctions
+## Additional Intersections & Junctions
 
 This section lists Intersections, Junctions, &/or Network possibility types that have been made possible &/or are included in this mod &/or have had adjustments/fixes applied to them. All of the intersections, junctions &/or network possibility types in this section are achieved in-game using the standard Network tools, where applicable. i.e. Highway Tools, Avenue Tool, Road Tool, & so on.
 
 **Note:** This list is not all inclusive & should only be considered as a guideline. Due to the multitude of items for this section, some items may exist that are currently not listed here or are not known, & as such this list may change. If in doubt, please experiment. Some known/unknown drawing, pathing &/or UDI issues may also exist with some items listed in this section.
 
-#### Legend
+### Legend
 
 * Junction typically has the same meaning as Intersection, but may also encompass non-intersection type junctions.
 * Orthogonal = Straight or follows the Grid.
@@ -1091,25 +1080,25 @@ This section lists Intersections, Junctions, &/or Network possibility types that
 
 The lists below are broken into two main Groups & items are listed by Network Set(s) according to Network Hierarchy, from lowest to highest (approximately). Group One involves only one network that have had additional intersections/etc items added for them i.e. no other networks are involved. Group Two is where more than one network is involved.
 
-#### Group One
+### Street
 
-Items in this section only involve one network.
+The keyboard shortcut for drawing street is <kbd>Alt</kbd> + <kbd>R</kbd>.
 
-The items in this group are not in any particular or specific format.
+Since the release of NAM 50 with the NAM DLL, diagonal streets can be created via dragging like any other network.
+As such, the previous diagonal street helper pieces have been retired and removed from NAM.
+Tunnels are also supported and have a height of 10m.
 
-##### Street
+{{< img-simple src="images/street-tunnel-and-diag.jpg" class="img-fluid"  >}}
 
-* Roundabouts. To trigger the initial Street roundabout, you must draw a Street Circle in a 2x2 tile area. There currently exists many variations with one, two, three &/or four orthogonal &/or Diagonal Streets stemming from this initial 2x2 tile area. NOTE: Requires an additional Plugin. See [Installation Instructions](/docs/reference/installation-notes/) for details.
-* Diagonals. This requires 5 or more tiles to be zig zagged, like a set of steps or stairs, before the diagonals are triggered. **Note:** Requires an additional Plugin. See [Installation Instructions](/docs/reference/installation-notes/) for details.
+The street network supports the creation of 2x2 roundabouts.
+To create a street roundabout, draw a street circle in a 2x2 tile area.
+A multitude of orthogonal and diagonal exits are supported off the roundabout.
 
-    <div class="row mx-0 g-1">
-    <div class="col text-center">{{< img-simple src="images/diagonal_streets.jpg" class="img-fluid" >}}</div>
-    </div>
-
-* You can also build a diagonal street via Diagonal Street helper puzzle pieces which can be used to build diagonal streets on sloped terrains or intersections. There are two types of them: normal puzzle pieces and construction puzzle pieces.
-    <div class="row mx-0 g-1">
-    <div class="col text-center">{{< img-simple src="images/diagonal_streets2.jpg" class="img-fluid" >}}</div>
-    </div>
+{{< carousel >}}
+    images/street-roundabout-1.jpg
+    images/street-roundabout-2.jpg
+    images/street-roundabout-3.jpg
+{{< /carousel >}}
 
 ##### Road
 
@@ -1449,10 +1438,6 @@ Items in this section involve more than one network. Items in this group follow 
 * Orthogonal x S-Curve
 * Orthogonal +Junction, Diagonal
 
-##### Diagonal Streets
-
-Various new intersections between diagonal streets and other network types have been added.
-
 **Note:** for any junction or intersection involving onewayroad: the onewayroad tool must be drawn properly in the correct direction in relation to any adjoining networks. If in doubt, please experiment.
 
 ### Draggable Wide-Radius Curves and Fractional Angle Functionality
@@ -1496,10 +1481,6 @@ The following networks support diagonal s-curves using the above pattern:
 Diagonal S-Curve (Street & SAM)
 
 {{< override from="images/diag_s-curve_street_pattern.png" to="images/diag_s-curve_street.png">}}
-
-{{< alert context="info" >}}
-**Note** - The street s-curve can also be constructed using diagonal street helper pieces.
-{{< /alert >}}
 
 Avenue 5x5 90° Curve
 {{< override from="images/avenue-90-curve_pattern.png" to="images/avenue-90-curve.png">}}
