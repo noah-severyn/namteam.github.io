@@ -23,12 +23,12 @@ One of the most substantial new features of the DLL is a custom RUL2 engine.
 The new custom engine: 
 - makes override networks much more stable,
 - allows for tighter footprints (i.e. crossings of override networks that previously had to be placed one tile apart may now be placed directly adjacent to each other),
-- reduces the size of the NAM codebase by almost 90% and by more than 10 million lines, making it easier to maintain and reducing the chance of bugs,
+- reduces the size of the NAM codebase by almost 90% and by 10.8 million lines, making it easier to maintain and reducing the chance of bugs,
 - improves performance and load time (the initial city load time is reduced by a huge amount, as a result of the controller code size reduction),
 - removes the strict requirement for the 4GB patch (though usage is still recommended), and
 - removes the Low-RAM/No-RHW controller as the full NAM Controller is now less than 60 MB.
 
-{{< img-simple src="images/rul2-code-diff.jpg" class="img-fluid" caption="Lines of RUL2 code removed because of the new engine" >}}
+{{< img-simple src="images/rul2-code-diff.jpg" class="img-fluid" caption="Lines of RUL2 removed from the controller due to the new engine" >}}
 
 ### Eternal Commuter Loop Fix
 The Eternal Commuter Loop is a bug (or design flaw in the game's pathfinding) in the game by which commuters between a series of cities get stuck in a loop traveling between cities, never actually finding a job. 
@@ -52,24 +52,21 @@ The slope tolerance for many network elements has been significantly improved.
     - The sinkhole bug associated with them is fixed.
     - Networks can be dragged through the On-slope transition piece.
 
-{{< gallery col-xl="2" col-lg="2" col-md="2" >}}
+{{< gallery col-xl="2" col-lg="2" col-md="2" caption="Improved slope tolerance for stations and starters">}}
     images/slope-tolerant-starters-1.jpeg
     images/slope-tolerant-starters-2.jpeg
 {{< /gallery >}}
 
-{{< gallery col-xl="3" col-lg="2" col-md="2" >}}
-    images/slope-tolerant-curves-1.jpeg
-    images/slope-tolerant-curves-2.jpeg
-    images/slope-tolerant-curves-3.jpeg
-    images/slope-tolerant-curves-4.jpeg
-    images/slope-tolerant-curves-5.jpeg
+{{< gallery col-xl="2" col-lg="2" col-md="2" caption="Improved slope tolerance for curves">}}
+    images/slope-tolerant-curves-1.jpg
+    images/slope-tolerant-curves-2.jpg
+    images/slope-tolerant-curves-3.jpg
+    images/slope-tolerant-curves-4.jpg
 {{< /gallery >}}
 
-{{< gallery col-xl="3" col-lg="3" col-md="3" >}}
-    images/on-slope-1.jpeg
-    images/on-slope-2.jpeg
-    images/on-slope-3.jpeg
-{{< /gallery >}}
+{{< img-simple src="images/on-slope-3.jpeg" class="img-fluid" caption="Networks can pass through on-slope pieces" >}}
+
+{{< img-simple src="images/on-slope-2.jpeg" class="img-fluid" caption="Smaller footprint of on-slope pieces allows networks to be placed adjacent to them" >}}
 
 ### Street Network updates
 Multiple updates have been included for the street network:
