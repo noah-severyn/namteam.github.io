@@ -30,6 +30,19 @@ The new custom engine:
 
 {{< img-simple src="images/rul2-code-diff.jpg" class="img-fluid" caption="Lines of RUL2 removed from the controller due to the new engine" >}}
 
+<div class="row g-4 justify-content-center">
+    <div class="col-6 col-md-5 d-flex justify-content-center">
+        <div class="w-100" style="max-width: 640px;">
+            {{< video mp4-src="videos/loading-with-dll.mp4" ratio="16x9" attributes="controls autoplay muted loop playsinline" caption="First load, full NAM install with DLL" >}}
+        </div>
+    </div>
+    <div class="col-6 col-md-5 d-flex justify-content-center">
+        <div class="w-100" style="max-width: 640px;">
+            {{< video mp4-src="videos/loading-without-dll.mp4" ratio="16x9" attributes="controls autoplay muted loop playsinline" caption="First load, full NAM install without DLL" >}}
+        </div>
+    </div>
+</div>
+
 ### Eternal Commuter Loop Fix
 The Eternal Commuter Loop is a bug (or design flaw in the game's pathfinding) in the game by which commuters between a series of cities get stuck in a loop traveling between cities, never actually finding a job. 
 This is perhaps one of the longest-standing bugs in the game that has not yet been able to be solved, with posts discussing possible solutions as far back as 2008.
