@@ -1,11 +1,17 @@
-<div class="ratio ratio-{{ with .Get "ratio" }}{{.}}{{ end }}">
+{{ $ratio := .Get "ratio" | default "16x9" -}}
+<div class="text-center{{ if .Get "caption" }} mb-1{{ end }}">
+<div class="ratio ratio-{{ $ratio }}">
   <video{{ with .Get "attributes" }} {{ . | safeHTMLAttr }}{{ end }}>
     {{ with .Get "webm-src" -}}
-    <source src="{{ . | relURL }}" type="video/webm">
+    {{ $webm := $.Page.Resources.GetMatch (printf "*%s*" .) -}}
+    <source src="{{ if $webm }}{{ $webm.RelPermalink }}{{ else }}{{ . | relURL }}{{ end }}" type="video/webm">
     {{ end -}}
     {{ with .Get "mp4-src" -}}
-    <source src="{{ . | relURL }}" type="video/mp4">
+    {{ $mp4 := $.Page.Resources.GetMatch (printf "*%s*" .) -}}
+    <source src="{{ if $mp4 }}{{ $mp4.RelPermalink }}{{ else }}{{ . | relURL }}{{ end }}" type="video/mp4">
     {{ end -}}
     Sorry, your browser doesn't support embedded videos.
   </video>
+</div>
+{{ with .Get "caption" }}<div class="mb-4"><i>{{ . }}</i></div>{{ end -}}
 </div>
