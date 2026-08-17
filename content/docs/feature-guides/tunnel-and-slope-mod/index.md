@@ -34,15 +34,24 @@ Each of the slope mod variants contain a number of baseline modifications to Max
 ## Vertical Curvature
 
 The Moderate (NAM style), Flat, and Very Flat variants make an additional modification to the slope parameters called vertical curvature.
-Instead of a network transitioning from flat, immediately to sloped, and then to flat again (see #1 below), the transitions between flat and sloped are smoothed out, giving that transition a curved effect similar to a rollercoaster, hence the term "rollercoasting" - see #2 below.
-While this gives slopes a more natural curvature, one drawback is the additional tiles required for the slope. See the green tiles in #3 below, which are now occupied by the slope. This may have undesired effects if you have buildings or developments on those tiles, so this effect can be mitigated by anchoring the ends of a network segment by placing road or rail squares and the top or bottom of the slope - the network won’t build until the distance is sufficient to accommodate the maximum slope and the vertical curvature.
+Instead of a network transitioning from flat, immediately to sloped, and then to flat again (see first image below), the transitions between flat and sloped are smoothed out, giving that transition a curved effect similar to a rollercoaster, hence the term "rollercoasting" (see second image below).
+
+While this gives slopes a more natural curvature, one drawback is the additional tiles required for the slope.
+Note the green tiles in the third image below, which are now occupied by the slope.
+This may have undesired effects if you have buildings or developments on those tiles, so this effect can be mitigated by anchoring the ends of a network segment by placing road or rail squares at the top or bottom of the slope - the network won’t build until the distance is sufficient to accommodate the maximum slope and the vertical curvature.
 
 
-{{< carousel >}}
-    images/vertical-curvature-1.png | A slope without vertical curvature
-    images/vertical-curvature-2.png | A slope with vertical curvature
-    images/vertical-curvature-3.png | Vertical curvature lengthens the slope
-{{< /carousel >}}
+<div class="row row-cols-1 row-cols-md-3 g-3 mb-4">
+    <div class="col">
+        {{< img-simple src="images/vertical-curvature-1.png" class="img-fluid" caption="A slope without vertical curvature" >}}
+    </div>
+    <div class="col">
+        {{< img-simple src="images/vertical-curvature-2.png" class="img-fluid" caption="A slope with vertical curvature" >}}
+    </div>
+    <div class="col">
+        {{< img-simple src="images/vertical-curvature-3.png" class="img-fluid" caption="Vertical curvature lengthens the slope" >}}
+    </div>
+</div>
 
 ## Slope Mod Variants
 
