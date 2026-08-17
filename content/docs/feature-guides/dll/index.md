@@ -101,5 +101,8 @@ Out of the box, SC4 never provided keyboard shortcuts for certain networks. The 
 ### Other Misc Changes
 Other minor changes now enabled by the DLL include:
 - the removal of the invisible cursor tile from all FLEX pieces. The handle does not interfere with any lots or networks anymore,
-- a reduction of the minimum height of bridges to enable ferry clearance from 30 to 20 meters, and
-- an option to allow RCI zones to access RHW networks (disabled by default).
+- a reduction of the minimum height of bridges to enable ferry clearance from 30 to 20 meters,
+- an option to allow RCI zones to access RHW networks (disabled by default), and
+- a fix for the "sinkhole to China" bug caused by plopping network pieces on a slight slope.
+
+{{< img-simple src="images/sinkhole-bug-fixed" class="img-fluid" caption="Sinkholes no more!" >}}
