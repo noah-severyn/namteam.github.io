@@ -34,7 +34,7 @@ The Network Addon Mod is compatible with the following versions of the SimCity4 
 {{< /table >}}
 
 <span class="fs-6">**<sup>1</sup>** Any digital retail edition, i.e. Version 1.1.641, is compatible ([the EA App/Origin/Xbox Retail Edition is compatible since June 2023](/docs/getting-started/installation-notes/#origin-ea-play-xbox-gamepass)).</span><br>
-<span class="fs-6">**<sup>2</sup>** The now-rare disc copies of SimCity 4 are incompatible. Starting with NAM 50, support for the Windows disc copies of SimCity (Version 1.1.638 or older) is discontinued, as they are incompatible with the DLL features.</span><br>
+<span class="fs-6">**<sup>2</sup>** The now-rare disc copies of SimCity 4 are incompatible. Starting with NAM 50, support for the Windows disc copies of SimCity (Version 1.1.640 or older) is discontinued, as they are incompatible with the DLL features.</span><br>
 <span class="fs-6">**<sup>3</sup>** Starting with NAM 50, support for any editions of the Aspyr port for macOS is discontinued ([Note to Mac Users](/docs/getting-started/installation/#mac)), as they are incompatible with the DLL features. The last macOS-compatible NAM version was NAM 49.</span><br>
 
 ### System Requirements
@@ -70,9 +70,9 @@ Finally, proceed with the installation using one of the options below.
 
 {{< details "Using sc4pac" >}}
 
-You can use the [sc4pac Mod Manager](https://community.simtropolis.com/files/file/36700-sc4pac-mod-manager/) to install the NAM. 
-Install the package [nam:network-addon-mod](https://memo33.github.io/sc4pac/channel/?pkg=nam:network-addon-mod) and the optional content listed therein, instead of running the NAM installer. 
-This makes it easy to install, update and uninstall the NAM. 
+You can use the [sc4pac Mod Manager](https://community.simtropolis.com/files/file/36700-sc4pac-mod-manager/) to install the NAM.
+Install the package [nam:network-addon-mod](https://memo33.github.io/sc4pac/channel/?pkg=nam:network-addon-mod) and the optional content listed therein, instead of running the NAM installer.
+This makes it easy to install, update and uninstall the NAM.
 The mod manager guides you through all the important installation options and even remembers your choices. Some non-default legacy options are not included, however.
 
 Before installing the NAM through sc4pac for the first time, make sure to fully [uninstall the NAM](/docs/getting-started/installation#uninstallation) first by removing all NAM files from previous manual installations.
@@ -103,7 +103,7 @@ Before installing the NAM through sc4pac for the first time, make sure to fully 
 
 6. Apply the 4GB patch - optional, but recommended.
     1. **As of NAM 50, the 4GB patch is no longer required, but is still recommended.**
-    2. To determine whether the 4GB Patch has already been applied, check the `NAM.log` file that is created by the DLL at every launch of the game ("The 4GB patch is installed" or "The 4GB patch not installed"). 
+    2. To determine whether the 4GB Patch has already been applied, check the `NAM.log` file that is created by the DLL at every launch of the game ("The 4GB patch is installed" or "The 4GB patch is not installed").
     2. Open the enclosed **4gb_patch.exe** file in the NAM download (or download it from [NTCore](https://ntcore.com/4gb-patch/)). A window will appear asking you to choose a file. Navigate to your game's installation location and select **SimCity 4.exe**. The location of this executable will vary. The default locations for common versions are:
         - **Steam**: `C:\Program Files (x86)\Steam\steamapps\common\SimCity 4 Deluxe\Apps`
         - **GOG**: `C:\GOG Games\SimCity 4 Deluxe Edition\Apps`
@@ -118,7 +118,7 @@ Before installing the NAM through sc4pac for the first time, make sure to fully 
     - If you've never run the NAM before, and you've picked a fuller installation option, the initial load of the game, and of the first city tile you open may be longer - often quite noticeably. This will shorten with subsequent loads of other cities, or, if you exit and re-enter the game. Installing the latest version of [Null 45's Startup Performance Optimization DLL for SimCity 4](https://community.simtropolis.com/files/file/36244-startup-performance-optimization-dll-for-simcity-4/) has been shown to make a dramatic difference in reducing load times.
     - If you do not see any icons in game, this most likely means your installation ended up in the wrong location. Reinstall, making sure the files go into your `Documents\SimCity 4\Plugins` folder.
     - If you have duplicate icons, this is an indication that you have multiple versions (or at least, portions of multiple versions) of the NAM installed simultaneously. We recommend removing all NAM files (both new and old) from the Plugins folder, and once again attempting an install of NAM {{< param docsversion >}}.
-    - If an advisor message pops up, claiming that the NAM.dll is missing, then either you forgot to copy the DLL into the top-level directory of the Plugins folder, or your game edition is incompatible with the DLL, or you may need to install the Microsoft Visual C++ 2022+ x86 Redistributable (see (system requirements)[#system-requirements]).
+    - If an advisor message pops up, claiming that the NAM.dll is missing, then either you forgot to copy the DLL into the top-level directory of the Plugins folder, or your game edition is incompatible with the DLL, or you may need to install the Microsoft Visual C++ 2022+ x86 Redistributable (see [system requirements](#system-requirements)).
 
 {{< /details >}}
 
@@ -183,7 +183,7 @@ NAM content is contained in the *`Plugins\Network Addon Mod`* folder by default.
 Consult one of our troubleshooting pages first to see if your question is covered there.
 * Run into an issue during gameplay? Consult the [Troubleshooting (Gameplay)](/docs/getting-started/troubleshooting-gameplay) page.
 * Have a general question? Consult the [Frequently Asked Questions](/docs/getting-started/frequently-asked-questions) page.
-* Otherwise drop us a message in the one of the Support areas linked in the top navigation bar. 
+* Otherwise drop us a message in the one of the Support areas linked in the top navigation bar.
 
 # When you're done installing, it's on to [The Basics](/docs/getting-started/in-game-basics).
 
@@ -201,7 +201,7 @@ Both the original Maxis Highways (MHW) and the "Maxis Highway Override/Project S
 
 ### Note to Mac Users {#mac}
 
-The Aspyr macOS versions of the game are unable to load DLL plugin files. 
+The Aspyr macOS versions of the game are unable to load DLL plugin files.
 As the NAM DLL brings important and major benefits for gameplay and maintainability of the NAM, support for the macOS versions of the game has been discontinued, as of NAM 50.
 For further details, see [The Future of SC4 Modding: The Matter of Digital vs. Disc, and Windows vs. macOS in the DLL Era](https://community.simtropolis.com/forums/topic/762980-the-future-of-sc4-modding-the-matter-of-digital-vs-disc-and-windows-vs-macos-in-the-dll-era/).
 
@@ -292,4 +292,4 @@ Aside from the advanced step of manually signing a device driver for Windows 10,
 
 Note that cracked executables (i.e. a "No CD" .exe) are not eligible for tech support. The NAM Team does not support piracy, but understands the frustration with the game's original DRM system being blocked by Microsoft, forcing one to buy a new digital copy in order to continue playing. However, the reason why cracked executables are not eligible is for more practical reasons, namely the potential for version mismatches (i.e. a Version 1.1.638 crack with Version 1.1.610/613 .DAT files, or vice-versa), which can greatly complicate the team's efforts to provide useful technical support to users. The [Origin issues](#notice-to-users-who-purchased-a-digital-copy-from-origin-or-use-ea-play-or-xbox-game-pass) played a role in our keeping the version check in place, until the recent installer change in 2020.
 
-Please note that if you are attempting to use an older, 32-bit version of Windows (i.e. Windows XP) in order to still run your disc game, this will substantially hamper the performance of the game with the full NAM installed, and it is highly recommended that you run the game on a 64-bit operating system if you intend to take advantage of the full feature set. If you must run on a 32-bit OS, you will need to either install the new NAMLite package, or, for a mid-sized installation, select one of the "LowRAM/NoRHW" NAM Controller options. (The RealHighway (RHW) system is by far the largest part of the NAM.)
+Please note that if you are attempting to use an older, 32-bit version of Windows (i.e. Windows XP) in order to still run your disc game, this will substantially hamper the performance of the game with the full NAM installed, and it is highly recommended that you run the game on a 64-bit operating system if you intend to take advantage of the full feature set. If you must run on a 32-bit OS, you will need to either install the new NAMLite package, or, for a mid-sized installation, deselect several of the optional components. (The RealHighway (RHW) system is by far the largest part of the NAM.)

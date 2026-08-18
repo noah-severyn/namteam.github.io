@@ -12,7 +12,7 @@ url: "docs/reference/nam-version-history"
 <!-- markdownlint-disable MD025 -->
 # Transitional Releases (2024 through 2025)
 
-## Version 50 (___ August 2026)
+## Version 50 (18 August 2026)
 This release is the first to rely on the NAM DLL. As such, this release is incompatible with the macOS editions of the game, and only compatible with the digital Windows edition.
 
 * **DLL Features:**
@@ -53,12 +53,16 @@ This release is the first to rely on the NAM DLL. As such, this release is incom
   * The D1 FLEX-ramp has been improved to make it work even when placed parallel to each other.
   * A pathing issue with DDRHW-4 to Dual RHW-4 FLEX Transition has been fixed.
   * Some improvements for HRW × RHW crosslinks.
+  * A pathing issue with L1 MIS-2 × L1 Avenue has been fixed.
+  * The Blue Suspension Bridge end pieces for RHW-4S and RHW-3 have been fixed.
+  * LHD issues with the QuickChange Diamonds RHW × Avenue in the Beta release have been resolved.
 * **RealRailway Improvements:**
   * RRW-style textures for some pre-RRW/legacy configurations have been added.
   * A few missing legacy paths for RRW WRC pieces have been restored.
   * The diagonal bridges (DBE) have been made compatible with RRW.
   * Some issues with diagonal STR RULs have been resolved.
   * The slope mods of RRW and MHO have been removed. Install the NAM Tunnel And Slope Mod instead. (In the past, these slope mods were included to configure the tunnel portals of these NAM networks. This has now been implemented universally using Exemplar Patching (for RRW, MHO and Street tunnels), which works with all slope mods as long as the Resource Loading Hooks DLL is present.)
+  * The orthogonal crossing STR × Avenue has been fixed.
 * **Other Various Improvements:**
   * All sinkhole bugs have been fixed.
   * Road Roundabout code has been revised for better stability.
@@ -77,33 +81,33 @@ This release is the first to rely on the NAM DLL. As such, this release is incom
 
 ## Version 49 (2 March 2025)
 
-* **Bridge Additions and Improvements**:								
+* **Bridge Additions and Improvements**:
 	* Red Truss Arch, Yellow Steel Girder, Green Truss, and Blue Suspension Bridges by IDS2 have been added for Road, Street, One-Way Road, AVE-2, ARD-3, NRD-4, OWR-3, RHW-2, RHW-3, RHW-4, and SAM Sets 2 and 6-11 (68 bridges total).
 	* Viaduct Bridges by Kitsune added at L3-L4 for MIS, RHW-4, and RHW-6S, and L0-L2 for Dual RHW-4 and RHW-6S (12 bridges total).
 	* Plain Bridges by eggman121 have been added for Hybrid Railway (HRW) at L0-L2 (3 bridges total).
 	* Ponte di Piacenza RRW Bridge by Ulisse Wolf added.
 	* Yes, that's 84 bridges.
-	* Every bridge has had its ceiling height updated (L0/Ground Level=-0.000001, L1=-7.5, L2=-15, L3=-22.5, L4=-30) to allow for a lower ferry clearance and for the elevated bridges to 
-	behave as . . . elevated bridges. As result the ferry clearance is now 270.1m / +20.1m. At this time its unknown how to get the in the game message to reflect this value, 
+	* Every bridge has had its ceiling height updated (L0/Ground Level=-0.000001, L1=-7.5, L2=-15, L3=-22.5, L4=-30) to allow for a lower ferry clearance and for the elevated bridges to
+	behave as . . . elevated bridges. As result the ferry clearance is now 270.1m / +20.1m. At this time its unknown how to get the in the game message to reflect this value,
 	therefore it will incorrectly state the bridge is not suitable for ferries even though it is.
 	* For models where property bridge obstruction = false, they have had the property removed after it was discovered the game is incorrectly treating it as bridge obstruction.
 	* Night textures fixed for RRW/Rail bridges, including the Iron Girder, Steel Arch, and Green Garabit Viaduct.
 	* A pathing issue with the RHW-10S Cable-Stayed Bridge has been fixed.
-	* Bridge Controller file has been renamed from "NetworkAddonMod_Bridges_Plugin_Controller.dat" to "NetworkAddonMod_Bridge_Controller.dat".							
+	* Bridge Controller file has been renamed from "NetworkAddonMod_Bridges_Plugin_Controller.dat" to "NetworkAddonMod_Bridge_Controller.dat".
 * **Mass Transit Authority (MTA) Station Update**:
 	* Improvements across the board to Station Transit-Enabling (TE) properties.
 	* Added SW77 El-Rail-over-Road station.
 	* Added the Mattb325 Victorian Diagonal L1 Viaduct E-RRW and separate HRW versions.
 	* Changes to the TE modding on the L2 Diagonal Rail stations, so they are now fully functional with E-RRW, you can just drag through the network on the lot. (They are also still functional with the puzzle pieces).
 	* DN/MN prop options added.
-	* LHD path remapping has been updated for GLR LOTting paths.						
-* **Street Network and SAM Improvements**:							
+	* LHD path remapping has been updated for GLR LOTting paths.
+* **Street Network and SAM Improvements**:
 	* Street and SAM network paths have undergone a comprehensive set of improvements.
 	* A texture issue has been fixed with the SAM-7 x Avenue OxO intersections.
 	* SAM texture file architecture has been redesigned to ease future additions and maintenance.
 	* Shadow remapping and LHD pathing has been improved on Elevated Rail and Monorail crossings over SAM.
-	* SAM x RRW crosslinks have been improved.						
-* **RealHighway Improvements**:	
+	* SAM x RRW crosslinks have been improved.
+* **RealHighway Improvements**:
 	* 3-Level Crossings adjacent to 45° FLEXFly setups are now functional.
 	* The diagonal overhanging models for the RHW-3, RHW-4, and MIS have been redesigned to minimize terrain clipping issues (wherein the terrain would poke through the highway).
 	* Major improvements have been made to the Type 21 exemplars on elevated RHW networks, especially those involving placement of support pillars.
