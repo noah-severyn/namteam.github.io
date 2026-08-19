@@ -38,6 +38,8 @@ module.exports = {
         'container-xxl',
         'container-fluid',
         'offcanvas-backdrop',
+        'ratio',
+        /^ratio-/,
         'img-fluid',
         'lazyload',
         'blur-up',

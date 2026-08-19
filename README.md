@@ -31,6 +31,9 @@ npm run start
 
 The site will be deployed automatically to `https://localhost:1313`.
 
+> [!TIP]
+> It is possible that changes and features may work when testing, but will not work when published in the production site. To test this, run `npm run server:prod` to preview the site after it has gone through the production build pipeline.
+
 
 ## Style guide
 
