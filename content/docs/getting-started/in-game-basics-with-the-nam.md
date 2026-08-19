@@ -28,19 +28,23 @@ Within the NAM’s menu you’ll find a few different kinds of items. We’ll ge
 
 * **PUZZLE PIECES** - A fixed, ploppable element that is static and **_does not_** override.
 * **STARTER PIECES** - A ploppable element that **_does_** override, telling the game to ignore it’s default tool and use your chosen starter piece instead. Example, plop a single 4-lane highway starter piece down and then drag through it with the highway tool to build a 4-lane highway! Easy.
-* **FLEX PIECES** - A ploppable, pre-built element that **_does_** override. Example, you’ve built a highway but now you want to add a slip-road or ramp. Plop down a flex piece ramp directly on top and it’ll fit itself into your design just like that. Alternatively, drag though a piece and it’ll update. Flexible, wouldn’t you say?
-* **HOLE/RAISER TOOL** - A simple tool that allows you to dig a hole (for tunnels) or raise the terrain (for bridges).
-* **ERASER** - Unlike the standard in-game “Bulldozer” tool, the NAM’s Eraser allows minimal destruction! Erase one tile, and only one, at a time.
+* **FLEX PIECES** - A ploppable, pre-built element that **_does_** override. Example, you’ve built a highway but now you want to add a slip-road or ramp. Plop down a flex piece ramp directly on top and it’ll fit itself into your design just like that. Alternatively, drag though a piece and it’ll update. Flexible, wouldn’t you say? 
 * **TRANSIT-ENABLED LOTS** - A piece that accepts more than one type of network. Example, a transit station, allowing sims to switch from riding a train to walking.
 
 ### USING THE MENU
+ 
+The NAM contains hundreds of different items you can place. 
+To minimize the items in your menu and make things easier to find, many pieces are found grouped within **Tab Rings**. 
+Tab Rings are shown as a single icon in the menu. 
+Once you select one of these in the menu, use <kbd>TAB</kbd> (or <kbd>CTRL</kbd> + <kbd>TAB</kbd> on macOS) to cycle forwards through the available pieces in this group.
+Use <kbd>SHIFT</kbd> + <kbd>TAB</kbd> (or <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>TAB</kbd> on macOS) to cycle in reverse order through the group.
+A hovering preview shows you the piece you currently have selected, and a small dialog box appears to explain what that piece is.
+Don’t worry if some of the descriptions don’t make sense just yet — this guide will help there.
 
-The NAM contains many hundreds of different items you can place. To minimize the items in your menu and make things easier to find, many pieces are found grouped within **Tab Rings**. Tab Rings are shown as a single icon in the menu. Once you select one of these in the menu, use **TAB** (**CTRL+TAB** on macOS) to cycle forwards through the available pieces in this group. Use **SHIFT+TAB** (**CTRL+SHIFT+TAB** on macOS) to cycle back through the group. A hovering preview shows you the piece you currently have selected, and a small dialog box appears to explain what that piece is. Don’t worry if some of the descriptions don’t make sense just yet — this guide will help there.
-
-Use the **HOME** and **END** keys to rotate a piece on the map, just like buildings.
+Use the <kbd>HOME</kbd> and <kbd>END</kbd> keys to rotate a piece on the map, just like buildings.
 
 {{< alert context="info" >}}
-**Attention Steam Users**: The Steam Overlay is set to use the key combination **SHIFT+TAB** by default. Through the Steam client, you will need to either change the key combination for the overlay, or disable it altogether in order to use cycle backwards through Tab Rings.
+**Attention Steam Users**: The Steam Overlay is set to use the key combination <kbd>SHIFT</kbd> + <kbd>TAB</kbd> by default. Through the Steam client, you will need to either change the key combination for the overlay, or disable it altogether in order to use cycle backwards through Tab Rings.
 {{< /alert >}}
 
 # That's really all there is to memorize! 
