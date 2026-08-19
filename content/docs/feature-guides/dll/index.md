@@ -14,7 +14,7 @@ images: []
 The NAM DLL brings a wide variety of fixes, many of which were previously thought impossible to implement due to limitations imposed within the game or its code.
 Should you wish to disable any of the features introduced by this DLL, either because of personal preferences or for debugging purposes, this is possible by installing the optional [NAM.ini](https://github.com/NAMTeam/nam-dll/blob/main/src/NAM.ini) file.
 When the game is launched, the NAM DLL will read the configuration you have specified in this file and enable or disable the features as specified.
-The `NAM.ini` file is intentionally distributed separately; the default settings are recommended for the vast majority of users.
+The NAM.ini file is intentionally distributed separately; the default settings are recommended for the vast majority of users.
 
 The NAM DLL is fully open source, and is distributed under the [LGPL-3 license](https://opensource.org/license/lgpl-3-0).
 The source can be found at [Github](https://github.com/NAMTeam/nam-dll).
