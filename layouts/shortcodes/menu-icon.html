@@ -1,8 +1,25 @@
+{{ $instance := .Get 0 }}
 {{- $icon := .Get "icon" -}}
  <!-- Argument name of 'Caption' kept for backward compatibility. Really this is more of a 'Title'. -->
 {{- $caption := .Get "caption" -}}
 {{- $description := .Get "description" -}}
-{{- $image := .Page.Resources.GetMatch (printf "*%s*" $icon) -}}
+{{- $image := .Page.Resources.GetMatch (printf "*%s*" $instance) -}}
+<!-- Fallback: not a page resource, so treat "icon" as the TGI of a bulk-exported icon (see scripts/extract-nam-icons.js). Label/description come from data/nam-icons.yml, keyed by the matching LTEXT TGIs (2026960B-123007BB-<instance> for the label, 2026960B-123006AA-<instance> for the description) since that's how the NAM's buttons.pot source ties them to the icon's Instance ID. -->
+{{- if not $image -}}
+  {{- with resources.Get (printf "images/icons/856ddbac-6a386d26-%s.png" $icon) -}}
+    {{- $sprite := . -}}
+    <!-- Hugo's Crop only supports fixed anchors (no arbitrary x-offset), so getting frame 3-of-4 takes two crops: first right-anchored crop keeps the last 2 frames, then left-anchored crop of that keeps the third -->
+    {{- $image = ($sprite.Crop (printf "%dx%d Right" 88 44)).Crop (printf "%dx%d Left" 44 44) -}}
+    <!-- {{- $instance := lower (index (split $icon "-") 2) -}} -->
+    {{- $namIcons := index site.Data "nam-icons" -}}
+    {{- if not $caption -}}
+      {{- with index $namIcons (printf "2026960b-123007bb-%s" $instance) -}}{{- $caption = .label -}}{{- end -}}
+    {{- end -}}
+    {{- if not $description -}}
+      {{- with index $namIcons (printf "2026960b-123006aa-%s" $instance) -}}{{- $description = .label -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 {{- $lqip := $image.Resize $.Site.Params.lqipWidth -}}
 
 <div class="d-flex align-items-center mb-4 p-3 border rounded bg-light">
