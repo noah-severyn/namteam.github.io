@@ -1,19 +1,37 @@
 // Extracts all menu icon PNGs from a NAM install, and pulls the button LTEXT strings from the NAM repo into a data file. The menu-icon shortcode uses the TGI and data file to automatically fill in the icon description.
 // Usage: node scripts/extract-nam-icons.js <path-to-nam-plugins>
-import { readdirSync, mkdirSync, writeFileSync } from 'node:fs';
+import { readdirSync, readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { DBPF, FileType } from 'sc4/core';
 import { stringify } from 'yaml';
 
+const LANGUAGE_CODE_OFFSETS = {
+    en: 0x00,
+    fr: 0x03,
+    de: 0x04,
+    it: 0x05,
+    es: 0x06,
+    nl: 0x07,
+    da: 0x08,
+    sv: 0x09,
+    no: 0x0a,
+    fi: 0x0b,
+    ja: 0x0f,
+    pl: 0x10,
+    ko: 0x14,
+    pt: 0x23,
+};
+
 async function main() {
     const namFolder = process.argv[2];
     const iconFolder = 'assets/images/icons';
-    const yamlFile = 'data/nam-icons.yml';
+    const iconLocaleFolder = 'data/nam-icons';
+    const iconDataFile = 'data/nam-icons.yaml';
     const dbpfExtensions = ['.dat', '.sc4lot', '.sc4model', '.sc4desc'];
-    mkdirSync(iconFolder, { recursive: true });
-    mkdirSync(path.dirname(yamlFile), { recursive: true });
 
-    const extracted = new Map(); // instance (hex) -> tgi id
+    const languages = GetLanguages('config/_default/languages.toml');
+
+    const extracted = new Map(); //ExemplarName → {File, Icon, Name, Description}
     let fileCount = 0;
 
     const files = walk(namFolder);
@@ -27,6 +45,31 @@ async function main() {
         } catch (err) {
             console.warn(`Skipping ${file}: ${err.message}`);
             continue;
+        }
+        const fileName = path.parse(file).name
+
+        //Extract LTEXT strings from local files
+        if (fileName.startsWith('NetworkAddonMod_Locale_')) {
+            const lang = fileName.replace('NetworkAddonMod_Locale_', '').replace('.dat', '');
+            const strings = new Map(); //TGI (normalized to base group) → LTEXT strings
+            for (const entry of dbpf) {
+                if (entry.type !== FileType.LTEXT) continue;
+                let ltext;
+                try {
+                    ltext = entry.read();
+                } catch {
+                    continue; // skip unreadable/corrupt LTEXT
+                }
+                const [type, group, instance] = entry.tgi.toArray();
+                
+                //Adjust the Group by the language offset so that the same TGI can be used to look up the string in any language
+                const offset = LANGUAGE_CODE_OFFSETS[lang] ?? 0;
+                strings.set(TgiToString([type, group - offset, instance]), ltext.value);
+            }
+            writeFileSync(
+                path.join(iconLocaleFolder, `${lang}.yaml`),
+                stringify(Object.fromEntries(strings), { blockQuote: 'literal' })
+            );
         }
 
         //Extract menu entry information and icon images
@@ -59,11 +102,11 @@ async function main() {
         }
         dbpf.free();
     }
+    writeFileSync(iconDataFile, stringify(Object.fromEntries(extracted)));
 
     console.log(`Scanned ${fileCount} DBPF files, extracted ${extracted.size} icons.`);
     console.log(`Images: ${iconFolder}`);
-    console.log(`Config: ${yamlFile}`);
-    console.log(`Locale strings: ${[...localeStrings.keys()].join(', ') || 'none found'}`);
+    console.log(`Config: ${iconDataFile}`);
 }
 
 /**
@@ -71,11 +114,16 @@ async function main() {
  * @param {string} tomlFile 
  * @returns {string[]} Array of language codes available in the documentation site
  */
-function getLanguages(tomlFile) {
+function GetLanguages(tomlFile) {
     const content = readFileSync(tomlFile, 'utf8');
-    return [...content.matchAll(/^\[(\w+)\]$/gm)].map(match => match[1]); // top-level table headers only, skips [en.params]
+    return [...content.matchAll(/^\[(\w+)\]$/gm)].map(match => match[1]);
 }
 
+/**
+ * Recursively walk a directory and yield all file paths
+ * @param {string} dir Directory to parse
+ * @returns {Generator<string>} Yields file paths
+ */
 function* walk(dir) {
     for (const entry of readdirSync(dir, { withFileTypes: true })) {
         const full = path.join(dir, entry.name);
@@ -83,7 +131,11 @@ function* walk(dir) {
         else yield full;
     }
 }
-
+/**
+ * Convert an array of numbers to a string representation of a TGI set
+ * @param {number[]} tgiArray Array of [type, group, instance]
+ * @returns {string} TGI string in the format "xxxxxxxx-xxxxxxxx-xxxxxxxx"
+ */
 function TgiToString(tgiArray) {
     if (tgiArray.length == 0) {
         return '00000000-00000000-00000000';

@@ -12,9 +12,10 @@
 {{- $image := ($sprite.Crop (printf "%dx%d Right" 88 44)).Crop (printf "%dx%d Left" 44 44) -}}
 {{- $lqip := $image.Resize $.Site.Params.lqipWidth -}}
 
-
-{{- $caption := $entry.Name -}}
-{{- $description := $entry.Description -}}
+{{- $locale := index $namIcons site.Language.Lang -}}
+{{- $enLocale := index $namIcons "en" -}}
+{{- $caption := index $locale $entry.Name | default (index $enLocale $entry.Name) | default $entry.Name -}}
+{{- $description := index $locale $entry.Description | default (index $enLocale $entry.Description) -}}
 
 <div class="d-flex align-items-center mb-4 p-3 border rounded bg-light">
   <div class="flex-shrink-0 me-3">
