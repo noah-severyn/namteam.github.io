@@ -3,37 +3,7 @@
 import { readdirSync, mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { DBPF, FileType } from 'sc4/core';
-
-/**
- * Download and parse the specified poEdit template file to YAML.
- * @returns {Promise<string>} YAML text
- */
-async function FetchAndParseButtonLabels(poEditFile) {
-    const response = await fetch(poEditFile);
-    if (!response.ok) {
-        throw new Error(`Failed to fetch buttons.pot: ${response.status} ${response.statusText}`);
-    }
-    const text = await response.text();
-    // super basic parser to convert the pot file to yaml
-    const yaml = [];
-    const lines = text.split(/\r?\n/);
-    for (let idx = 11; idx < lines.length; idx++) { //Skip first 11 header lines
-        const line = lines[idx].trim();
-        if (line.startsWith('msgctxt')) {
-            yaml.push(("\n" + line.replace("msgctxt ", "").replaceAll('"', '') + ": |-").toLowerCase());
-        }
-        else if (line == 'msgid ""') {
-            continue;
-        }
-        else if (line.startsWith('msgid ')) {
-            yaml.push("    " + line.replace("msgid ", "").replaceAll('"', '').replaceAll('\\n', ''));
-        }
-        else if (line.startsWith('"')) {
-            yaml.push("    " + line.replaceAll('"', '').replaceAll('\\n', ''));
-        }
-    }
-    return yaml.join('\n');
-}
+import { stringify } from 'yaml';
 
 async function main() {
     const namFolder = process.argv[2];
@@ -46,7 +16,8 @@ async function main() {
     const extracted = new Map(); // instance (hex) -> tgi id
     let fileCount = 0;
 
-    for (const file of walk(namFolder)) {
+    const files = walk(namFolder);
+    for (const file of files) {
         if (!dbpfExtensions.includes(path.extname(file).toLowerCase())) continue;
         fileCount++;
 
@@ -58,6 +29,7 @@ async function main() {
             continue;
         }
 
+        //Extract menu entry information and icon images
         for (const entry of dbpf.exemplars) {
             let exemplar;
             try {
@@ -66,27 +38,42 @@ async function main() {
                 continue; // if unreadable/corrupt exemplar, skip rather than abort whole run
             }
 
-            const iconValue = exemplar.value('ItemIcon');
-            if (!iconValue) continue;
-            const instance = Array.isArray(iconValue) ? iconValue[2] : iconValue;
-            const iconEntry = dbpf.find({ type: FileType.PNG, instance });
+            const exemplarName = exemplar.value('ExemplarName');
+            const iconInstance = exemplar.value('ItemIcon');
+            if (!iconInstance) continue;
+            //I believe NAM files will always have the icon in the same dbpf file as the exemplar
+            const iconEntry = dbpf.find({ type: FileType.PNG, instance: iconInstance });
             if (!iconEntry) continue;
 
-            const id = tgiToId(iconEntry.tgi.toArray());
-            const instanceHex = id.split('-')[2];
-            if (extracted.has(instanceHex)) continue; // already extracted this icon
+            const props = {
+                File: fileName,
+                Icon: TgiToString(iconEntry.tgi.toArray()), //TGI
+                Name: TgiToString(exemplar.value('UserVisibleNameKey') ?? []), //TGI
+                Description: TgiToString(exemplar.value('ItemDescriptionKey') ?? []), //TGI
+            }
 
-            writeFileSync(path.join(iconFolder, `${id}.png`), iconEntry.decompress());
-            extracted.set(instanceHex, id);
+            if (extracted.has(exemplarName)) continue; //The same exemplar name can appear multiple times in different menus (wit different TGIs), skip these as they have the same icons
+
+            writeFileSync(path.join(iconFolder, `${props.Icon}.png`), iconEntry.decompress());
+            extracted.set(exemplarName, props);
         }
         dbpf.free();
     }
 
-    const yaml = await FetchAndParseButtonLabels('https://raw.githubusercontent.com/NAMTeam/Network-Addon-Mod/refs/heads/staging/ltext/buttons.pot');
-    writeFileSync(yamlFile, yaml);
     console.log(`Scanned ${fileCount} DBPF files, extracted ${extracted.size} icons.`);
     console.log(`Images: ${iconFolder}`);
     console.log(`Config: ${yamlFile}`);
+    console.log(`Locale strings: ${[...localeStrings.keys()].join(', ') || 'none found'}`);
+}
+
+/**
+ * Fetch the list of available languages in the documentation site
+ * @param {string} tomlFile 
+ * @returns {string[]} Array of language codes available in the documentation site
+ */
+function getLanguages(tomlFile) {
+    const content = readFileSync(tomlFile, 'utf8');
+    return [...content.matchAll(/^\[(\w+)\]$/gm)].map(match => match[1]); // top-level table headers only, skips [en.params]
 }
 
 function* walk(dir) {
@@ -97,9 +84,15 @@ function* walk(dir) {
     }
 }
 
-function tgiToId([type, group, instance]) {
-    const hex = (n) => n.toString(16).padStart(8, '0').toLowerCase();
-    return `${hex(type)}-${hex(group)}-${hex(instance)}`;
+function TgiToString(tgiArray) {
+    if (tgiArray.length == 0) {
+        return '00000000-00000000-00000000';
+    }
+    return `${ToHexString(tgiArray[0])}-${ToHexString(tgiArray[1])}-${ToHexString(tgiArray[2])}`;
+
+    function ToHexString(n) {
+        return n.toString(16).padStart(8, '0').toLowerCase();
+    }
 }
 
 main();

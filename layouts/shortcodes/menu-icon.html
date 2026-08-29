@@ -1,18 +1,20 @@
-{{- $instance := .Get 0 -}}
+{{- $iconKey := .Get 0 -}}
 {{- $showDescription := eq (.Get 1) "true" -}}
-{{- $sprite := resources.Get (printf "images/icons/856ddbac-6a386d26-%s.png" $instance) -}}
-{{- if not $sprite -}}
-  {{- errorf "menu-icon: could not resolve instance %q on page %q (not in assets/images/icons)" $instance .Page.File.Filename -}}
-{{- end -}}
+
+{{- $namIcons := index site.Data "nam-icons" -}}
+{{- $entry := index $namIcons $iconKey -}}
 
 <!-- Hugo's Crop only supports fixed anchors (no arbitrary x-offset), so getting frame 3-of-4 takes two crops: first right-anchored crop keeps the last 2 frames, then left-anchored crop of that keeps the third -->
+{{- $sprite := resources.Get (printf "images/icons/%s.png" $entry.Icon) -}}
+{{- if not $sprite -}}
+  {{- errorf "menu-icon: could not resolve instance %q on page %q (not in assets/images/icons)" $iconKey .Page.File.Filename -}}
+{{- end -}}
 {{- $image := ($sprite.Crop (printf "%dx%d Right" 88 44)).Crop (printf "%dx%d Left" 44 44) -}}
 {{- $lqip := $image.Resize $.Site.Params.lqipWidth -}}
 
-<!-- Label/description come from data/nam-icons.yml, keyed by the matching LTEXT TGIs (2026960b-123007bb-<instance> for the label, 2026960b-123006aa-<instance> for the description) since that's how the NAM's buttons.pot source ties them to the icon's Instance ID. -->
-{{- $namIcons := index site.Data "nam-icons" -}}
-{{- $caption := index $namIcons (printf "2026960b-123007bb-%s" $instance) | default $instance -}}
-{{- $description := index $namIcons (printf "2026960b-123006aa-%s" $instance) -}}
+
+{{- $caption := $entry.Name -}}
+{{- $description := $entry.Description -}}
 
 <div class="d-flex align-items-center mb-4 p-3 border rounded bg-light">
   <div class="flex-shrink-0 me-3">
