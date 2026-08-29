@@ -27,7 +27,7 @@
   <div class="flex-grow-1">
     <h5 class="h5 mb-0 mt-0">{{ $caption | markdownify }}</h5>
     {{- if and $description $showDescription -}}
-    <p class="mb-0 text-muted small">{{ $description | markdownify }}</p>
+    <div class="mb-0 text-muted small">{{ $description | markdownify }}</div>
     {{- end -}}
   </div>
 </div>
