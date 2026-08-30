@@ -1,4 +1,4 @@
-// Extracts all menu icon PNGs from a NAM install, and pulls the button LTEXT strings from the NAM repo into a data file. The menu-icon shortcode uses the TGI and data file to automatically fill in the icon description.
+// Extracts all menu icon PNGs and LTEXTs from a NAM install. The menu-icon shortcode uses the menu item's exemplar name as a key to look up the appropriate icon, title, and description.
 // Usage: node scripts/extract-nam-icons.js <path-to-nam-plugins>
 import { readdirSync, readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
