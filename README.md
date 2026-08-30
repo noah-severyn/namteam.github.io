@@ -278,7 +278,7 @@ Below are examples as they are used in the RHW documentation:
 The menu icons and related LTEXT titles and descriptions can be refreshed automatically via a script. Run:
 
 ``` sh
-node scripts\extract-nam-icons.js "C:\path\to\nam\install\folder"
+npm run icons:extract "C:\path\to\nam\install\folder"
 ```
 
 

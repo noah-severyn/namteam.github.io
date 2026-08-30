@@ -1,5 +1,5 @@
 // Extracts all menu icon PNGs and LTEXTs from a NAM install. The menu-icon shortcode uses the menu item's exemplar name as a key to look up the appropriate icon, title, and description.
-// Usage: node scripts/extract-nam-icons.js <path-to-nam-plugins>
+// Usage: npm run icons:extract <path-to-nam-plugins>
 import { readdirSync, readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { DBPF, FileType } from 'sc4/core';
