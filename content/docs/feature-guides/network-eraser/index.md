@@ -13,7 +13,7 @@ url: "docs/feature-guides/network-eraser"
 
 The **Network Eraser** (previously known as the _RHW Disconnector_) is a special tool which erases a single tile of any network or FLEX Piece. It does not affect the surrounding sections of network, so the Network Eraser is safer to use and less destructive when one needs to remove or rebuild a section of network than the game's Bulldozer tool, especially when complex setups are involved. It can be found near the top of the Roads, Highways, Rails, and Misc. Transit menus.
 
-{{< menu-icon icon="images/icons/rhw-network-eraser-button" caption="_Network Eraser Button_" >}}
+{{< menu-icon "NAM Eraser" "true" >}}
 
 To use the Network Eraser, select it from the menu, hover it over the stretch of network you wish to erase, and then click to erase. The Network Eraser can be found near the top of the Highways menu, as well as the the Roads, Rails, and Miscellaneous Transportation menus.
 
