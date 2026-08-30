@@ -20,7 +20,6 @@ To use the Network Eraser, select it from the menu, hover it over the stretch of
 {{< gallery col-xl="2" col-lg="1" col-md="1">}}
     images/network-eraser-1.jpg
     images/network-eraser-2.jpg
-    images/network-eraser-3.jpg
 {{< /gallery >}}
 
 The Network Eraser can work on any draggable intersection combination between two different networks:
@@ -49,6 +48,6 @@ The base RealHighway network has auto-connect functionality, similar to the way 
 
 {{< override from="images/rhw-bulldozer-before.jpg" to="images/rhw-bulldozer-after.jpg">}}
 
-To combat this issue, use the Network Eraser instead. The Network Eraser is also used as part of some Pattern-Based Draggable setups used by the RealHighway, particularly the [Draggable Ramp Interfaces (DRIs)](/docs/feature-guides/realhighway#DRI). Additionally, it can be used in many situations with non-RHW networks as well.
+To combat this issue, use the Network Eraser instead. The Network Eraser is also used as part of some Pattern-Based Draggable setups used by the RealHighway, particularly the [Draggable Ramp Interfaces (DRIs)](/docs/feature-guides/realhighway#dri). Additionally, it can be used in many situations with non-RHW networks as well.
 
 {{< override from="images/rhw-eraser-before.jpg" to="images/rhw-eraser-after.jpg">}}
